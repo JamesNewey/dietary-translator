@@ -1,0 +1,39 @@
+{
+  "language": {
+    "select": "言語を選択",
+    "detected": "検出された言語"
+  },
+  "dietary": {
+    "title": "食事要件",
+    "preferences": {
+      "title": "食事の好み",
+      "vegan": "完全菜食",
+      "vegetarian": "菜食",
+      "pescatarian": "魚菜食",
+      "halal": "ハラル",
+      "kosher": "コーシャ",
+      "glutenFree": "グルテンフリー"
+    },
+    "intolerances": {
+      "title": "食物不耐症",
+      "lactose": "乳糖不耐症",
+      "gluten": "グルテン不耐症",
+      "fructose": "果糖不耐症"
+    },
+    "allergies": {
+      "title": "食物アレルギー",
+      "nuts": "ナッツ",
+      "shellfish": "甲殻類",
+      "eggs": "卵",
+      "milk": "牛乳",
+      "soy": "大豆",
+      "wheat": "小麦",
+      "fish": "魚"
+    }
+  },
+  "buttons": {
+    "next": "次へ",
+    "back": "戻る",
+    "translate": "翻訳"
+  }
+} 

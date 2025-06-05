@@ -1,0 +1,42 @@
+{
+  "language": {
+    "select": "Välj Språk",
+    "detected": "Språk Upptäckt"
+  },
+  "dietary": {
+    "title": "Kostkrav",
+    "preferences": {
+      "title": "Kostpreferenser",
+      "header": "Jag har följande kostpreferenser:",
+      "vegan": "Vegan",
+      "vegetarian": "Vegetarisk",
+      "pescatarian": "Pescetarisk",
+      "halal": "Halal",
+      "kosher": "Kosher",
+      "glutenFree": "Glutenfri"
+    },
+    "intolerances": {
+      "title": "Matintoleranser",
+      "header": "Jag har följande matintoleranser:",
+      "lactose": "Laktosintolerans",
+      "gluten": "Glutenintolerans",
+      "fructose": "Fruktosintolerans"
+    },
+    "allergies": {
+      "title": "Matallergier",
+      "header": "Jag har följande matallergier:",
+      "nuts": "Nötter",
+      "shellfish": "Skaldjur",
+      "eggs": "Ägg",
+      "milk": "Mjölk",
+      "soy": "Soja",
+      "wheat": "Vete",
+      "fish": "Fisk"
+    }
+  },
+  "buttons": {
+    "next": "Nästa",
+    "back": "Tillbaka",
+    "translate": "Översätt"
+  }
+} 

@@ -1,0 +1,42 @@
+{
+  "language": {
+    "select": "Selecionar Idioma",
+    "detected": "Idioma Detectado"
+  },
+  "dietary": {
+    "title": "Requisitos Alimentares",
+    "preferences": {
+      "title": "Preferências Alimentares",
+      "header": "Tenho as seguintes preferências alimentares:",
+      "vegan": "Vegano",
+      "vegetarian": "Vegetariano",
+      "pescatarian": "Pescetariano",
+      "halal": "Halal",
+      "kosher": "Kosher",
+      "glutenFree": "Sem Glúten"
+    },
+    "intolerances": {
+      "title": "Intolerâncias Alimentares",
+      "header": "Tenho as seguintes intolerâncias alimentares:",
+      "lactose": "Intolerância à Lactose",
+      "gluten": "Intolerância ao Glúten",
+      "fructose": "Intolerância à Frutose"
+    },
+    "allergies": {
+      "title": "Alergias Alimentares",
+      "header": "Tenho as seguintes alergias alimentares:",
+      "nuts": "Frutos Secos",
+      "shellfish": "Mariscos",
+      "eggs": "Ovos",
+      "milk": "Leite",
+      "soy": "Soja",
+      "wheat": "Trigo",
+      "fish": "Peixe"
+    }
+  },
+  "buttons": {
+    "next": "Próximo",
+    "back": "Voltar",
+    "translate": "Traduzir"
+  }
+} 

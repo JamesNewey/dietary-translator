@@ -1,0 +1,39 @@
+{
+  "language": {
+    "select": "选择语言",
+    "detected": "检测到的语言"
+  },
+  "dietary": {
+    "title": "饮食要求",
+    "preferences": {
+      "title": "饮食偏好",
+      "vegan": "纯素",
+      "vegetarian": "素食",
+      "pescatarian": "鱼素",
+      "halal": "清真",
+      "kosher": "犹太洁食",
+      "glutenFree": "无麸质"
+    },
+    "intolerances": {
+      "title": "食物不耐受",
+      "lactose": "乳糖不耐受",
+      "gluten": "麸质不耐受",
+      "fructose": "果糖不耐受"
+    },
+    "allergies": {
+      "title": "食物过敏",
+      "nuts": "坚果",
+      "shellfish": "贝类",
+      "eggs": "鸡蛋",
+      "milk": "牛奶",
+      "soy": "大豆",
+      "wheat": "小麦",
+      "fish": "鱼类"
+    }
+  },
+  "buttons": {
+    "next": "下一步",
+    "back": "返回",
+    "translate": "翻译"
+  }
+} 

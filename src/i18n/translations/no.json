@@ -1,0 +1,42 @@
+{
+  "language": {
+    "select": "Velg Språk",
+    "detected": "Språk Oppdaget"
+  },
+  "dietary": {
+    "title": "Kostkrav",
+    "preferences": {
+      "title": "Kostpreferanser",
+      "header": "Jeg har følgende kostpreferanser:",
+      "vegan": "Vegansk",
+      "vegetarian": "Vegetarisk",
+      "pescatarian": "Pescetarisk",
+      "halal": "Halal",
+      "kosher": "Kosher",
+      "glutenFree": "Glutenfri"
+    },
+    "intolerances": {
+      "title": "Matintoleranser",
+      "header": "Jeg har følgende matintoleranser:",
+      "lactose": "Laktoseintoleranse",
+      "gluten": "Glutenintoleranse",
+      "fructose": "Fruktoseintoleranse"
+    },
+    "allergies": {
+      "title": "Matallergier",
+      "header": "Jeg har følgende matallergier:",
+      "nuts": "Nøtter",
+      "shellfish": "Skalldyr",
+      "eggs": "Egg",
+      "milk": "Melk",
+      "soy": "Soya",
+      "wheat": "Hvete",
+      "fish": "Fisk"
+    }
+  },
+  "buttons": {
+    "next": "Neste",
+    "back": "Tilbake",
+    "translate": "Oversett"
+  }
+} 

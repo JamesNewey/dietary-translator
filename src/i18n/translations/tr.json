@@ -1,0 +1,42 @@
+{
+  "language": {
+    "select": "Dil Seçin",
+    "detected": "Tespit Edilen Dil"
+  },
+  "dietary": {
+    "title": "Diyet Gereksinimleri",
+    "preferences": {
+      "title": "Diyet Tercihleri",
+      "header": "Aşağıdaki diyet tercihlerine sahibim:",
+      "vegan": "Vegan",
+      "vegetarian": "Vejetaryen",
+      "pescatarian": "Pesketaryen",
+      "halal": "Helal",
+      "kosher": "Koşer",
+      "glutenFree": "Glutensiz"
+    },
+    "intolerances": {
+      "title": "Gıda İntoleransları",
+      "header": "Aşağıdaki gıda intoleranslarına sahibim:",
+      "lactose": "Laktoz İntoleransı",
+      "gluten": "Gluten İntoleransı",
+      "fructose": "Fruktoz İntoleransı"
+    },
+    "allergies": {
+      "title": "Gıda Alerjileri",
+      "header": "Aşağıdaki gıda alerjilerine sahibim:",
+      "nuts": "Kuruyemişler",
+      "shellfish": "Kabuklu Deniz Ürünleri",
+      "eggs": "Yumurta",
+      "milk": "Süt",
+      "soy": "Soya",
+      "wheat": "Buğday",
+      "fish": "Balık"
+    }
+  },
+  "buttons": {
+    "next": "İleri",
+    "back": "Geri",
+    "translate": "Çevir"
+  }
+} 

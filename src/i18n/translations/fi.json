@@ -1,0 +1,42 @@
+{
+  "language": {
+    "select": "Valitse Kieli",
+    "detected": "Kieli Havaittu"
+  },
+  "dietary": {
+    "title": "Ruokavaliovaatimukset",
+    "preferences": {
+      "title": "Ruokavaliomieltymykset",
+      "header": "Minulla on seuraavat ruokavaliomieltymykset:",
+      "vegan": "Vegaani",
+      "vegetarian": "Kasvissyöjä",
+      "pescatarian": "Pescetariaani",
+      "halal": "Halal",
+      "kosher": "Kosher",
+      "glutenFree": "Gluteeniton"
+    },
+    "intolerances": {
+      "title": "Ruoka-aineiden sietämättömyydet",
+      "header": "Minulla on seuraavat ruoka-aineiden sietämättömyydet:",
+      "lactose": "Laktoosi-intoleranssi",
+      "gluten": "Gluteeni-intoleranssi",
+      "fructose": "Fruktoosi-intoleranssi"
+    },
+    "allergies": {
+      "title": "Ruoka-aineallergiat",
+      "header": "Minulla on seuraavat ruoka-aineallergiat:",
+      "nuts": "Pähkinät",
+      "shellfish": "Äyriäiset",
+      "eggs": "Kanamunat",
+      "milk": "Maito",
+      "soy": "Soija",
+      "wheat": "Vehnä",
+      "fish": "Kala"
+    }
+  },
+  "buttons": {
+    "next": "Seuraava",
+    "back": "Takaisin",
+    "translate": "Käännä"
+  }
+} 

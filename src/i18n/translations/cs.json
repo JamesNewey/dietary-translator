@@ -1,0 +1,42 @@
+{
+  "language": {
+    "select": "Vyberte Jazyk",
+    "detected": "Zjištěný Jazyk"
+  },
+  "dietary": {
+    "title": "Dietní Požadavky",
+    "preferences": {
+      "title": "Dietní Preference",
+      "header": "Mám následující dietní preference:",
+      "vegan": "Veganské",
+      "vegetarian": "Vegetariánské",
+      "pescatarian": "Pescetariánské",
+      "halal": "Halal",
+      "kosher": "Košer",
+      "glutenFree": "Bezlepkové"
+    },
+    "intolerances": {
+      "title": "Potravinové Intolerance",
+      "header": "Mám následující potravinové intolerance:",
+      "lactose": "Intolerance laktózy",
+      "gluten": "Intolerance lepku",
+      "fructose": "Intolerance fruktózy"
+    },
+    "allergies": {
+      "title": "Potravinové Alergie",
+      "header": "Mám následující potravinové alergie:",
+      "nuts": "Ořechy",
+      "shellfish": "Korýši",
+      "eggs": "Vejce",
+      "milk": "Mléko",
+      "soy": "Sója",
+      "wheat": "Pšenice",
+      "fish": "Ryby"
+    }
+  },
+  "buttons": {
+    "next": "Další",
+    "back": "Zpět",
+    "translate": "Přeložit"
+  }
+} 

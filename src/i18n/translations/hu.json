@@ -1,0 +1,42 @@
+{
+  "language": {
+    "select": "Válasszon Nyelvet",
+    "detected": "Észlelt Nyelv"
+  },
+  "dietary": {
+    "title": "Étrendi Követelmények",
+    "preferences": {
+      "title": "Étrendi Preferenciák",
+      "header": "A következő étrendi preferenciáim vannak:",
+      "vegan": "Vegán",
+      "vegetarian": "Vegetáriánus",
+      "pescatarian": "Peszkotariánus",
+      "halal": "Halal",
+      "kosher": "Kosher",
+      "glutenFree": "Gluténmentes"
+    },
+    "intolerances": {
+      "title": "Ételintoleranciák",
+      "header": "A következő ételintoleranciáim vannak:",
+      "lactose": "Laktózintolerancia",
+      "gluten": "Gluténintolerancia",
+      "fructose": "Fruktózintolerancia"
+    },
+    "allergies": {
+      "title": "Ételallergiák",
+      "header": "A következő ételallergiáim vannak:",
+      "nuts": "Diófélék",
+      "shellfish": "Rákfélék",
+      "eggs": "Tojás",
+      "milk": "Tej",
+      "soy": "Szója",
+      "wheat": "Búza",
+      "fish": "Hal"
+    }
+  },
+  "buttons": {
+    "next": "Következő",
+    "back": "Vissza",
+    "translate": "Fordítás"
+  }
+} 
