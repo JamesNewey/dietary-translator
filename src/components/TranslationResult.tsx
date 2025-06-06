@@ -15,6 +15,7 @@ import {
   Divider,
 } from '@mui/material';
 import { DietaryRequirements } from '../types';
+import FlagIcon from './FlagIcon';
 
 interface TranslationResultProps {
   requirements: DietaryRequirements;
@@ -32,6 +33,7 @@ const languages = [
   { code: 'zh', name: 'Chinese' },
   { code: 'ja', name: 'Japanese' },
   { code: 'ko', name: 'Korean' },
+  { code: 'uk', name: 'Ukrainian' },
 ];
 
 interface TranslatedRequirements {
@@ -129,15 +131,14 @@ const TranslationResult: React.FC<TranslationResultProps> = ({
           >
             {languages.map((language) => (
               <MenuItem key={language.code} value={language.code}>
-                {language.name}
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                  <FlagIcon code={language.code} />
+                  <span>{language.name}</span>
+                </Box>
               </MenuItem>
             ))}
           </Select>
         </FormControl>
-
-        <Typography variant="h6" gutterBottom>
-          {t('dietary.title')}
-        </Typography>
 
         {renderRequirementsList(translatedRequirements.preferences, t('dietary.preferences.header'))}
         {translatedRequirements.preferences.length > 0 && translatedRequirements.intolerances.length > 0 && <Divider sx={{ my: 2 }} />}
