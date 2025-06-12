@@ -1,0 +1,41 @@
+{
+  "language": {
+    "select": "زبان منتخب کریں",
+    "title": "اپنی پسندیدہ زبان منتخب کریں"
+  },
+  "dietary": {
+    "title": "اپنی غذائی ضروریات منتخب کریں",
+    "preferences": {
+      "title": "غذائی ترجیحات",
+      "vegan": "وگن",
+      "vegetarian": "سبزی خور",
+      "pescatarian": "مچھلی کھانے والا",
+      "halal": "حلال",
+      "kosher": "کوشر",
+      "glutenFree": "گلوٹین فری"
+    },
+    "intolerances": {
+      "title": "خوراک کی عدم برداشت",
+      "lactose": "لیکٹوز عدم برداشت",
+      "gluten": "گلوٹین عدم برداشت",
+      "fructose": "فرکٹوز عدم برداشت"
+    },
+    "allergies": {
+      "title": "خوراک کی الرجی",
+      "nuts": "گری دار میوے",
+      "shellfish": "سی فوڈ",
+      "eggs": "انڈے",
+      "milk": "دودھ",
+      "soy": "سویا",
+      "wheat": "گندم",
+      "fish": "مچھلی"
+    }
+  },
+  "translation": {
+    "title": "آپ کی غذائی ضروریات"
+  },
+  "buttons": {
+    "next": "اگلا",
+    "back": "واپس"
+  }
+} 

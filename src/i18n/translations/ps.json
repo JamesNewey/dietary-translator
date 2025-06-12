@@ -1,0 +1,42 @@
+{
+  "_language": "Pashto (پښتو)",
+  "language": {
+    "select": "ژبه وټاکئ",
+    "title": "خپله غوره ژبه وټاکئ"
+  },
+  "dietary": {
+    "title": "خپل خواړه اړتیاوې وټاکئ",
+    "preferences": {
+      "title": "خواړه غوره توبونه",
+      "vegan": "سبزی خوړونکی",
+      "vegetarian": "سبزی خوړونکی",
+      "pescatarian": "کب خوړونکی",
+      "halal": "حلال",
+      "kosher": "کوشر",
+      "glutenFree": "د ګلوتن څخه پاک"
+    },
+    "intolerances": {
+      "title": "د خواړو نا تحملی",
+      "lactose": "د لاکتوز نا تحملی",
+      "gluten": "د ګلوتن نا تحملی",
+      "fructose": "د فرکټوز نا تحملی"
+    },
+    "allergies": {
+      "title": "د خواړو الرژي",
+      "nuts": "بادام",
+      "shellfish": "د سمندر خواړه",
+      "eggs": "هګۍ",
+      "milk": "شیدې",
+      "soy": "سویا",
+      "wheat": "غنم",
+      "fish": "کب"
+    }
+  },
+  "translation": {
+    "title": "ستاسو د خواړو اړتیاوې"
+  },
+  "buttons": {
+    "next": "بل",
+    "back": "شاته"
+  }
+} 

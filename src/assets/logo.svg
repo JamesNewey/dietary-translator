@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="256" fill="#FF4B2B"/>
+  <circle cx="256" cy="256" r="240" fill="#FFFFFF"/>
+  
+  <!-- Plate -->
+  <circle cx="256" cy="256" r="200" fill="#F5F5F5" stroke="#FFD700" stroke-width="8"/>
+  
+  <!-- Fork and Knife -->
+  <g transform="translate(256, 256) rotate(-45)">
+    <!-- Fork -->
+    <rect x="-120" y="-8" width="16" height="160" rx="4" fill="#FF4B2B"/>
+    <rect x="-100" y="-8" width="16" height="160" rx="4" fill="#FF4B2B"/>
+    <rect x="-80" y="-8" width="16" height="160" rx="4" fill="#FF4B2B"/>
+    <rect x="-60" y="-8" width="16" height="160" rx="4" fill="#FF4B2B"/>
+    
+    <!-- Knife -->
+    <path d="M60,-8 L120,152 L100,152 L40,-8 Z" fill="#FF4B2B"/>
+    <path d="M40,-8 L60,-8 L100,152 L80,152 Z" fill="#FFD700"/>
+  </g>
+  
+  <!-- Text -->
+  <text x="256" y="400" font-family="Bangers, cursive" font-size="48" fill="#FF4B2B" text-anchor="middle">
+    Dietary Translator
+  </text>
+</svg> 

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Box, Button, FormControl, InputLabel, MenuItem, Select, Typography } from '@mui/material';
+import FlagIcon from './FlagIcon';
 
 interface LanguageSelectorProps {
   onNext: () => void;
@@ -47,7 +48,10 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ onNext }) => {
         >
           {languages.map((language) => (
             <MenuItem key={language.code} value={language.code}>
-              {language.name}
+              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+                <FlagIcon code={language.code} />
+                <span>{language.name}</span>
+              </Box>
             </MenuItem>
           ))}
         </Select>

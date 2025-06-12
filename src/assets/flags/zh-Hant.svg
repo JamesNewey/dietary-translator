@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="900" height="600" viewBox="0 0 9 6" xmlns="http://www.w3.org/2000/svg">
+  <rect width="9" height="6" fill="#DE2910"/>
+  <g fill="#FFDE00">
+    <path d="M1.5,1 L2.5,3 L1,2.5 L2,2.5 L1.5,1"/>
+    <path d="M3.5,1 L4.5,3 L3,2.5 L4,2.5 L3.5,1"/>
+    <path d="M5.5,1 L6.5,3 L5,2.5 L6,2.5 L5.5,1"/>
+    <path d="M7.5,1 L8.5,3 L7,2.5 L8,2.5 L7.5,1"/>
+  </g>
+</svg> 
