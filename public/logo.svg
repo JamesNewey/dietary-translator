@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-label="Dietary Translator">
+  <!-- two cards: the waiter's behind, yours in front -->
+  <rect x="12" y="2" width="18" height="22" rx="2" fill="#FF488B"/>
+  <rect x="2" y="8" width="18" height="22" rx="2" fill="#101421"/>
+  <rect x="6" y="14" width="10" height="2.5" fill="#FFFFFF"/>
+  <rect x="6" y="19.5" width="7" height="2.5" fill="#FFFFFF"/>
+</svg>

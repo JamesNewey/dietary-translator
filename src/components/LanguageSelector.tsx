@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Box, Button, FormControl, InputLabel, MenuItem, Select, Typography } from '@mui/material';
+import { Box, Button, MenuItem, Select, Typography } from '@mui/material';
 import FlagIcon from './FlagIcon';
 
 interface LanguageSelectorProps {
@@ -29,40 +29,34 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ onNext }) => {
   };
 
   return (
-    <Box sx={{ maxWidth: 400, mx: 'auto', mt: 4 }}>
-      <Typography variant="h5" gutterBottom>
+    <Box>
+      <Typography variant="h2" component="label" id="language-select-label" sx={{ display: 'block' }}>
         {t('language.select')}
       </Typography>
-      
-      <Typography variant="body2" color="text.secondary" gutterBottom>
+
+      <Typography variant="body2" color="text.secondary" sx={{ mt: 0.75 }}>
         {t('language.detected')}: {languages.find(lang => lang.code === detectedLanguage)?.name || 'English'}
       </Typography>
 
-      <FormControl fullWidth sx={{ mt: 2 }}>
-        <InputLabel id="language-select-label">Language</InputLabel>
-        <Select
-          labelId="language-select-label"
-          value={i18n.language}
-          label="Language"
-          onChange={handleLanguageChange}
-        >
-          {languages.map((language) => (
-            <MenuItem key={language.code} value={language.code}>
-              <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-                <FlagIcon code={language.code} />
-                <span>{language.name}</span>
-              </Box>
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
+      <Select
+        fullWidth
+        value={i18n.language}
+        onChange={handleLanguageChange}
+        inputProps={{ 'aria-labelledby': 'language-select-label' }}
+        sx={{ mt: 2 }}
+      >
+        {languages.map((language) => (
+          <MenuItem key={language.code} value={language.code}>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+              <FlagIcon code={language.code} />
+              <span>{language.name}</span>
+            </Box>
+          </MenuItem>
+        ))}
+      </Select>
 
-      <Box sx={{ mt: 4, display: 'flex', justifyContent: 'flex-end' }}>
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={onNext}
-        >
+      <Box sx={{ mt: 7 }}>
+        <Button variant="contained" color="primary" onClick={onNext}>
           {t('buttons.next')}
         </Button>
       </Box>
@@ -70,4 +64,4 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ onNext }) => {
   );
 };
 
-export default LanguageSelector; 
+export default LanguageSelector;

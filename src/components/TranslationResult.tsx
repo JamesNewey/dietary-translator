@@ -1,19 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import {
-  Box,
-  Button,
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Paper,
-  Select,
-  Typography,
-  List,
-  ListItem,
-  ListItemText,
-  Divider,
-} from '@mui/material';
+import { Box, Button, MenuItem, Select, Typography } from '@mui/material';
 import { DietaryRequirements } from '../types';
 import FlagIcon from './FlagIcon';
 
@@ -36,11 +23,7 @@ const languages = [
   { code: 'uk', name: 'Ukrainian' },
 ];
 
-interface TranslatedRequirements {
-  preferences: string[];
-  intolerances: string[];
-  allergies: string[];
-}
+const categories: (keyof DietaryRequirements)[] = ['preferences', 'intolerances', 'allergies'];
 
 const TranslationResult: React.FC<TranslationResultProps> = ({
   requirements,
@@ -48,86 +31,82 @@ const TranslationResult: React.FC<TranslationResultProps> = ({
 }) => {
   const { t, i18n } = useTranslation();
   const [targetLanguage, setTargetLanguage] = useState(i18n.language);
-  const [translatedRequirements, setTranslatedRequirements] = useState<TranslatedRequirements>({
-    preferences: [],
-    intolerances: [],
-    allergies: [],
-  });
 
-  useEffect(() => {
-    const translateRequirements = async () => {
-      await i18n.changeLanguage(targetLanguage);
-      
-      const translated: TranslatedRequirements = {
-        preferences: [],
-        intolerances: [],
-        allergies: [],
-      };
+  // The card is written with a translator fixed to the waiter's language, so the rest of the
+  // interface stays in the visitor's own language and their own version can sit under the card.
+  const waiterT = i18n.getFixedT(targetLanguage);
 
-      // Translate preferences
-      Object.entries(requirements.preferences).forEach(([key, value]) => {
-        if (value) {
-          translated.preferences.push(t(`dietary.preferences.${key}`));
-        }
-      });
+  const ticked = (category: keyof DietaryRequirements) =>
+    Object.entries(requirements[category]).filter(([, value]) => value).map(([key]) => key);
 
-      // Translate intolerances
-      Object.entries(requirements.intolerances).forEach(([key, value]) => {
-        if (value) {
-          translated.intolerances.push(t(`dietary.intolerances.${key}`));
-        }
-      });
+  // Some languages have no "I have the following …" sentence; use the group's title rather than
+  // falling back to an English sentence on a card the waiter reads.
+  const lead = (category: keyof DietaryRequirements) =>
+    i18n.getResource(targetLanguage, 'translation', `dietary.${category}.header`)
+      ? waiterT(`dietary.${category}.header`)
+      : waiterT(`dietary.${category}.title`);
 
-      // Translate allergies
-      Object.entries(requirements.allergies).forEach(([key, value]) => {
-        if (value) {
-          translated.allergies.push(t(`dietary.allergies.${key}`));
-        }
-      });
-
-      setTranslatedRequirements(translated);
-    };
-
-    translateRequirements();
-  }, [targetLanguage, requirements, i18n, t]);
+  const groups = categories.filter((category) => ticked(category).length > 0);
+  const ownVersion = groups
+    .map((category) => ticked(category).map((key) => t(`dietary.${category}.${key}`)).join(', '))
+    .join('. ');
 
   const handleLanguageChange = (event: any) => {
     setTargetLanguage(event.target.value);
   };
 
-  const renderRequirementsList = (items: string[], header: string) => {
-    if (items.length === 0) return null;
-    
-    return (
-      <Box sx={{ mb: 3 }}>
-        <Typography variant="h6" sx={{ mb: 1 }}>
-          {header}
-        </Typography>
-        <List>
-          {items.map((item, index) => (
-            <ListItem key={index}>
-              <ListItemText primary={item} />
-            </ListItem>
-          ))}
-        </List>
-      </Box>
-    );
-  };
-
   return (
-    <Box sx={{ maxWidth: 600, mx: 'auto', mt: 4 }}>
-      <Paper sx={{ p: 3 }}>
-        <Typography variant="h6" gutterBottom>
-          {t('language.select')}
+    <Box>
+      <Box
+        component="article"
+        lang={targetLanguage}
+        sx={{
+          width: 'min(900px, calc(100vw - clamp(20px, 2.8vw, 40px) * 2))',
+          minHeight: '50svh',
+          display: 'flex',
+          flexDirection: 'column',
+          p: 'clamp(28px, 4vw, 56px)',
+          bgcolor: 'stage',
+          transition: 'background-color 240ms ease',
+        }}
+      >
+        <Typography variant="body2" color="text.secondary" sx={{ fontWeight: 500 }}>
+          {languages.find((lang) => lang.code === targetLanguage)?.name ?? targetLanguage}
         </Typography>
 
-        <FormControl fullWidth sx={{ mb: 4 }}>
-          <InputLabel id="target-language-label">Target Language</InputLabel>
+        <Box sx={{ mt: 'auto', pt: 5, display: 'flex', flexDirection: 'column', gap: 'clamp(28px, 4vw, 48px)' }}>
+          {groups.map((category) => (
+            <Box key={category}>
+              <Typography variant="h2" component="p" sx={{ fontWeight: 400 }}>
+                {lead(category)}
+              </Typography>
+              <Typography
+                component="p"
+                sx={{ mt: 1, fontSize: 'clamp(2rem, 1.3rem + 3.2vw, 4rem)', fontWeight: 500, lineHeight: 1.1, letterSpacing: '-0.02em' }}
+              >
+                {ticked(category).map((key) => waiterT(`dietary.${category}.${key}`)).join(', ')}
+              </Typography>
+            </Box>
+          ))}
+        </Box>
+      </Box>
+
+      <Box sx={{ mt: 2.5, display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '16px 32px' }}>
+        {targetLanguage !== i18n.language && ownVersion && (
+          <Typography variant="body2" color="text.secondary" sx={{ maxWidth: '60ch' }}>
+            {ownVersion}
+          </Typography>
+        )}
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
+          <Typography variant="body2" component="label" id="target-language-label">
+            {t('language.select')}
+          </Typography>
           <Select
-            labelId="target-language-label"
+            size="small"
             value={targetLanguage}
-            label="Target Language"
             onChange={handleLanguageChange}
+            inputProps={{ 'aria-labelledby': 'target-language-label' }}
+            sx={{ typography: 'body2' }}
           >
             {languages.map((language) => (
               <MenuItem key={language.code} value={language.code}>
@@ -138,22 +117,16 @@ const TranslationResult: React.FC<TranslationResultProps> = ({
               </MenuItem>
             ))}
           </Select>
-        </FormControl>
-
-        {renderRequirementsList(translatedRequirements.preferences, t('dietary.preferences.header'))}
-        {translatedRequirements.preferences.length > 0 && translatedRequirements.intolerances.length > 0 && <Divider sx={{ my: 2 }} />}
-        {renderRequirementsList(translatedRequirements.intolerances, t('dietary.intolerances.header'))}
-        {(translatedRequirements.preferences.length > 0 || translatedRequirements.intolerances.length > 0) && translatedRequirements.allergies.length > 0 && <Divider sx={{ my: 2 }} />}
-        {renderRequirementsList(translatedRequirements.allergies, t('dietary.allergies.header'))}
-
-        <Box sx={{ mt: 4, display: 'flex', justifyContent: 'flex-start' }}>
-          <Button variant="outlined" onClick={onBack}>
-            {t('buttons.back')}
-          </Button>
         </Box>
-      </Paper>
+      </Box>
+
+      <Box sx={{ mt: 7 }}>
+        <Button variant="outlined" onClick={onBack}>
+          {t('buttons.back')}
+        </Button>
+      </Box>
     </Box>
   );
 };
 
-export default TranslationResult; 
+export default TranslationResult;

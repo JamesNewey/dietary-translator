@@ -1,4 +1,3 @@
-// Bengali (বাংলা)
 {
   "_language": "Bengali (বাংলা)",
   "language": {
@@ -30,7 +29,8 @@
       "milk": "দুধ",
       "soy": "সয়াবিন",
       "wheat": "গম",
-      "fish": "মাছ"
+      "fish": "মাছ",
+      "coconut": "নারকেল"
     }
   },
   "translation": {

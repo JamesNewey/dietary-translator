@@ -21,6 +21,7 @@ export interface FoodAllergies {
   soy: boolean;
   wheat: boolean;
   fish: boolean;
+  coconut: boolean;
 }
 
 export interface DietaryRequirements {
