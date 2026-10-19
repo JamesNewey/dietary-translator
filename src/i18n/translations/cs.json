@@ -1,7 +1,7 @@
 {
   "language": {
     "select": "Vyberte Jazyk",
-    "detected": "Zjištěný Jazyk"
+    "yours": "Váš jazyk"
   },
   "dietary": {
     "title": "Dietní Požadavky",
@@ -40,4 +40,4 @@
     "back": "Zpět",
     "translate": "Přeložit"
   }
-} 
+}

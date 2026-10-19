@@ -1,7 +1,7 @@
 {
   "language": {
     "select": "Wybierz Język",
-    "detected": "Wykryty Język"
+    "yours": "Twój język"
   },
   "dietary": {
     "title": "Wymagania Dietetyczne",
@@ -40,4 +40,4 @@
     "back": "Wstecz",
     "translate": "Tłumacz"
   }
-} 
+}

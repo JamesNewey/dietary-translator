@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { keyframes } from '@emotion/react';
 import { Box, Button, Typography } from '@mui/material';
+import FlagIcon from './FlagIcon';
 import Logo from './Logo';
+import { Category, EASE_OUT, LANGUAGES, PAGE_MARGIN, needKeys } from '../constants';
 
 // The landing screen, from public/designv2simple/index.html: two halves a step apart in tone,
 // the words bottom-left and one example card on the right that turns through the waiter's languages.
@@ -15,19 +17,13 @@ interface LandingProps {
 
 // The example card: a fresh set of needs on every page load (one diet, one intolerance, two allergies),
 // shown in languages the app loads. Keys match src/types.
-type Category = 'preferences' | 'intolerances' | 'allergies';
-const choices: Record<Category, string[]> = {
-  preferences: ['vegan', 'vegetarian', 'pescatarian', 'halal', 'kosher', 'glutenFree'],
-  intolerances: ['lactose', 'gluten', 'fructose'],
-  allergies: ['nuts', 'shellfish', 'eggs', 'milk', 'soy', 'wheat', 'fish'],
-};
 
 // n different keys, in the order the app lists them
 const pickKeys = (category: Category, n: number) => {
-  const pool = [...choices[category]];
+  const pool = needKeys(category);
   const picked: string[] = [];
   while (picked.length < n && pool.length) picked.push(pool.splice(Math.floor(Math.random() * pool.length), 1)[0]);
-  return choices[category].filter((key) => picked.includes(key));
+  return needKeys(category).filter((key) => picked.includes(key));
 };
 
 const randomExample = (): { category: Category; keys: string[] }[] => [
@@ -35,15 +31,30 @@ const randomExample = (): { category: Category; keys: string[] }[] => [
   { category: 'intolerances', keys: pickKeys('intolerances', 1) },
   { category: 'allergies', keys: pickKeys('allergies', 2) },
 ];
-const cardLanguages = [
-  { code: 'ja', name: '日本語', separator: '、' },
-  { code: 'fr', name: 'Français', separator: ', ' },
-  { code: 'es', name: 'Español', separator: ', ' },
-  { code: 'ko', name: '한국어', separator: ', ' },
-];
+// Every loaded language except the visitor's own, in a fresh random order on each load.
+// Each is named in itself (日本語, Français), using the browser's own language names.
+const SEPARATORS: Record<string, string> = { ja: '、', zh: '、' };
 
-const margin = 'clamp(20px, 2.8vw, 40px)';
-const easeOut = 'cubic-bezier(0.22, 1, 0.36, 1)';
+const nativeName = (code: string) => {
+  try {
+    const name = new Intl.DisplayNames([code], { type: 'language' }).of(code) ?? code;
+    return name.charAt(0).toLocaleUpperCase(code) + name.slice(1);
+  } catch {
+    return LANGUAGES.find((lang) => lang.code === code)?.name ?? code;
+  }
+};
+
+const randomCardLanguages = (own: string) => {
+  const codes = LANGUAGES.map((lang) => lang.code).filter((code) => code !== own.split('-')[0]);
+  for (let i = codes.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [codes[i], codes[j]] = [codes[j], codes[i]];
+  }
+  return codes.map((code) => ({ code, name: nativeName(code), separator: SEPARATORS[code] ?? ', ' }));
+};
+
+const margin = PAGE_MARGIN;
+const easeOut = EASE_OUT;
 const lineUp = keyframes`from { transform: translateY(105%); } to { transform: none; }`;
 const rise = keyframes`from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; }`;
 const moving = '@media (prefers-reduced-motion: no-preference)';
@@ -66,6 +77,7 @@ const Landing: React.FC<LandingProps> = ({ onStart, darkMode, onToggleMode }) =>
   const { t, i18n } = useTranslation();
   // drawn once per load, so it holds steady while the card turns through languages
   const [example] = useState(randomExample);
+  const [cardLanguages] = useState(() => randomCardLanguages(i18n.language));
   const [shown, setShown] = useState(0);
   const [fading, setFading] = useState(false);
   const [paused, setPaused] = useState(false);
@@ -85,8 +97,10 @@ const Landing: React.FC<LandingProps> = ({ onStart, darkMode, onToggleMode }) =>
     return () => {
       clearInterval(timer);
       clearTimeout(swap);
+      // pausing mid-fade cancels the swap, so bring the text back rather than leave it invisible
+      setFading(false);
     };
-  }, [paused]);
+  }, [paused, cardLanguages.length]);
 
   const card = cardLanguages[shown];
   const waiterT = i18n.getFixedT(card.code);
@@ -122,6 +136,21 @@ const Landing: React.FC<LandingProps> = ({ onStart, darkMode, onToggleMode }) =>
               <MaskedLine index={1}>{t('landing.titleLine2')}</MaskedLine>
             </Typography>
             <Typography sx={{ maxWidth: '40ch', mt: 3.5, ...riseIn }}>{t('landing.lead')}</Typography>
+            <Box component="ul" sx={{ listStyle: 'none', m: 0, mt: 2, p: 0, display: 'flex', flexDirection: 'column', gap: 0.75, ...riseIn }}>
+              {['preferences', 'allergies', 'intolerances'].map((category) => (
+                <Typography
+                  key={category}
+                  component="li"
+                  sx={{
+                    display: 'flex', alignItems: 'center', gap: 1.25,
+                    // the same pink mark as a ticked need
+                    '&::before': { content: '""', width: 10, height: 10, flex: 'none', bgcolor: 'primary.main', transform: 'rotate(45deg) scale(0.85)' },
+                  }}
+                >
+                  {t(`dietary.${category}.title`)}
+                </Typography>
+              ))}
+            </Box>
             <Typography variant="body2" color="text.secondary" sx={{ maxWidth: '44ch', mt: 1.5, ...riseIn }}>
               {t('landing.note')}
             </Typography>
@@ -161,9 +190,12 @@ const Landing: React.FC<LandingProps> = ({ onStart, darkMode, onToggleMode }) =>
               bgcolor: 'background.paper', transition: 'background-color 240ms ease',
             }}
           >
-            <Typography variant="body2" color="text.secondary" lang={card.code} sx={{ fontWeight: 500 }}>
-              {card.name}
-            </Typography>
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+              <FlagIcon code={card.code} width={21} height={14} />
+              <Typography variant="body2" color="text.secondary" lang={card.code} sx={{ fontWeight: 500 }}>
+                {card.name}
+              </Typography>
+            </Box>
             <Box
               lang={card.code}
               sx={{ mt: 'auto', pt: 3, opacity: fading ? 0 : 1, transform: fading ? 'translateY(8px)' : 'none', transition: `opacity 360ms ease, transform 360ms ${easeOut}` }}

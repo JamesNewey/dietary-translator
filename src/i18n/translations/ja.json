@@ -1,7 +1,7 @@
 {
   "language": {
     "select": "言語を選択",
-    "detected": "検出された言語"
+    "yours": "あなたの言語"
   },
   "dietary": {
     "title": "食事要件",
@@ -37,4 +37,4 @@
     "back": "戻る",
     "translate": "翻訳"
   }
-} 
+}

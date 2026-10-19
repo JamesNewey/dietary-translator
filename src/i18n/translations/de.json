@@ -1,7 +1,7 @@
 {
   "language": {
     "select": "Sprache Auswählen",
-    "detected": "Erkannte Sprache"
+    "yours": "Ihre Sprache"
   },
   "dietary": {
     "title": "Ernährungsanforderungen",
@@ -37,4 +37,4 @@
     "back": "Zurück",
     "translate": "Übersetzen"
   }
-} 
+}

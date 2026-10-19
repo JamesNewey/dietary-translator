@@ -1,7 +1,7 @@
 {
   "language": {
     "select": "Select Language",
-    "detected": "Detected Language"
+    "yours": "Your language"
   },
   "dietary": {
     "title": "Dietary Requirements",
@@ -52,4 +52,4 @@
     "darkMode": "Dark mode",
     "lightMode": "Light mode"
   }
-} 
+}

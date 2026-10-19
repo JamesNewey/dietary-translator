@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Box, Button, Typography } from '@mui/material';
 import { DietaryRequirements } from '../types';
+import { Category, EASE_OUT } from '../constants';
 
 interface DietaryPreferencesFormProps {
   requirements: DietaryRequirements;
@@ -36,7 +37,7 @@ const Tick: React.FC<TickProps> = ({ label, checked, onChange }) => (
         px: 1.75,
         bgcolor: checked ? 'text.primary' : 'stage',
         color: checked ? 'background.default' : 'text.primary',
-        transition: 'background-color 180ms ease, color 180ms ease, transform 140ms cubic-bezier(0.22, 1, 0.36, 1)',
+        transition: `background-color 180ms ease, color 180ms ease, transform 140ms ${EASE_OUT}`,
         'input:focus-visible + &': { outline: `2px solid ${theme.palette.primary.main}`, outlineOffset: 3 },
         'input:active + &': { transform: 'scale(0.97)' },
         '@media (hover: hover) and (pointer: fine)': {
@@ -49,7 +50,7 @@ const Tick: React.FC<TickProps> = ({ label, checked, onChange }) => (
           flex: 'none',
           bgcolor: checked ? 'primary.main' : 'tick',
           transform: checked ? 'rotate(45deg) scale(0.85)' : 'none',
-          transition: 'background-color 180ms ease, transform 240ms cubic-bezier(0.22, 1, 0.36, 1)',
+          transition: `background-color 180ms ease, transform 240ms ${EASE_OUT}`,
         },
       })}
     >
@@ -66,7 +67,7 @@ const DietaryPreferencesForm: React.FC<DietaryPreferencesFormProps> = ({
 }) => {
   const { t } = useTranslation();
 
-  const handlePreferenceChange = (category: keyof DietaryRequirements, key: string) => (
+  const handlePreferenceChange = (category: Category, key: string) => (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
     onChange({
@@ -78,7 +79,10 @@ const DietaryPreferencesForm: React.FC<DietaryPreferencesFormProps> = ({
     });
   };
 
-  const renderGroup = (category: keyof DietaryRequirements, first = false) => (
+  // the card needs at least one need to show
+  const anyTicked = Object.values(requirements).some((group) => Object.values(group).some(Boolean));
+
+  const renderGroup = (category: Category, first = false) => (
     <Box component="fieldset" sx={{ minWidth: 0, m: 0, mt: first ? 0 : 4, p: 0, border: 0 }}>
       <Typography variant="h3" component="legend" sx={{ p: 0, mb: 1.5 }}>
         {t(`dietary.${category}.title`)}
@@ -103,7 +107,7 @@ const DietaryPreferencesForm: React.FC<DietaryPreferencesFormProps> = ({
       {renderGroup('allergies')}
 
       <Box sx={{ mt: 7, display: 'flex', alignItems: 'center', gap: 3 }}>
-        <Button variant="contained" color="primary" onClick={onNext}>
+        <Button variant="contained" color="primary" onClick={onNext} disabled={!anyTicked}>
           {t('buttons.next')}
         </Button>
         <Button variant="outlined" onClick={onBack}>

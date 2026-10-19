@@ -1,7 +1,7 @@
 {
   "language": {
     "select": "Válasszon Nyelvet",
-    "detected": "Észlelt Nyelv"
+    "yours": "Az Ön nyelve"
   },
   "dietary": {
     "title": "Étrendi Követelmények",
@@ -40,4 +40,4 @@
     "back": "Vissza",
     "translate": "Fordítás"
   }
-} 
+}

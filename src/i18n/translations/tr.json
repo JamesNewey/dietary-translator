@@ -1,7 +1,7 @@
 {
   "language": {
     "select": "Dil Seçin",
-    "detected": "Tespit Edilen Dil"
+    "yours": "Diliniz"
   },
   "dietary": {
     "title": "Diyet Gereksinimleri",
@@ -40,4 +40,4 @@
     "back": "Geri",
     "translate": "Çevir"
   }
-} 
+}

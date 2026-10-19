@@ -1,4 +1,5 @@
 import { createTheme, PaletteMode } from '@mui/material';
+import { EASE_OUT } from './constants';
 
 // Design v2 ("the quiet instrument"): one face (Switzer), white with navy ink by default,
 // plum-black in dark mode, hot pink only on the primary action. Square corners, no shadows at rest.
@@ -37,6 +38,9 @@ const tokens = {
 const accent = '#ff488b';
 const font = '"Switzer", "Helvetica Neue", Arial, "Noto Sans", system-ui, sans-serif';
 
+// The "Dietary Requirements" heading at the top of each step.
+export const pageTitleSx = { mb: 6, fontSize: 'clamp(2rem, 1rem + 3.6vw, 4.5rem)', whiteSpace: { sm: 'nowrap' } } as const;
+
 export const getTheme = (mode: PaletteMode) => {
   const c = tokens[mode];
   return createTheme({
@@ -73,7 +77,7 @@ export const getTheme = (mode: PaletteMode) => {
             minHeight: 48,
             padding: '0 22px',
             fontSize: 'inherit',
-            transition: 'transform 140ms cubic-bezier(0.22, 1, 0.36, 1), background-color 180ms ease, color 180ms ease',
+            transition: `transform 140ms ${EASE_OUT}, background-color 180ms ease, color 180ms ease`,
             '&:active': { transform: 'scale(0.97)' },
             '&.Mui-focusVisible': { outline: `2px solid ${accent}`, outlineOffset: 3 },
           },

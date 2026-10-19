@@ -1,7 +1,7 @@
 {
   "language": {
     "select": "Selecteer Taal",
-    "detected": "Taal Gedetecteerd"
+    "yours": "Uw taal"
   },
   "dietary": {
     "title": "Dieetwensen",
@@ -40,4 +40,4 @@
     "back": "Terug",
     "translate": "Vertalen"
   }
-} 
+}

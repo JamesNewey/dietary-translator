@@ -1,7 +1,7 @@
 {
   "language": {
     "select": "Valitse Kieli",
-    "detected": "Kieli Havaittu"
+    "yours": "Kielesi"
   },
   "dietary": {
     "title": "Ruokavaliovaatimukset",
@@ -40,4 +40,4 @@
     "back": "Takaisin",
     "translate": "Käännä"
   }
-} 
+}

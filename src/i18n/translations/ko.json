@@ -1,7 +1,7 @@
 {
   "language": {
     "select": "언어 선택",
-    "detected": "감지된 언어"
+    "yours": "사용 언어"
   },
   "dietary": {
     "title": "식이 요구사항",
@@ -37,4 +37,4 @@
     "back": "뒤로",
     "translate": "번역"
   }
-} 
+}

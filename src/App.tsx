@@ -7,7 +7,9 @@ import Button from '@mui/material/Button';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTranslation } from 'react-i18next';
 import './i18n/config';
-import { getTheme } from './theme';
+import { getTheme, pageTitleSx } from './theme';
+import { EMPTY_REQUIREMENTS, PAGE_MARGIN, THEME_KEY } from './constants';
+import { DietaryRequirements } from './types';
 import Logo from './components/Logo';
 import Landing from './components/Landing';
 import LanguageSelector from './components/LanguageSelector';
@@ -15,9 +17,6 @@ import DietaryPreferencesForm from './components/DietaryPreferencesForm';
 import TranslationResult from './components/TranslationResult';
 
 type Mode = 'light' | 'dark';
-
-// Shared with the static pages in public/designv2simple, so a choice made there carries over.
-const THEME_KEY = 'dt-theme';
 
 const readSavedMode = (): Mode | null => {
   try {
@@ -46,31 +45,7 @@ function App() {
   };
   // step 0 is the landing screen; 1–3 are language, requirements and the card
   const [step, setStep] = useState(0);
-  const [requirements, setRequirements] = useState({
-    preferences: {
-      vegan: false,
-      vegetarian: false,
-      pescatarian: false,
-      halal: false,
-      kosher: false,
-      glutenFree: false,
-    },
-    intolerances: {
-      lactose: false,
-      gluten: false,
-      fructose: false,
-    },
-    allergies: {
-      nuts: false,
-      shellfish: false,
-      eggs: false,
-      milk: false,
-      soy: false,
-      wheat: false,
-      fish: false,
-      coconut: false,
-    },
-  });
+  const [requirements, setRequirements] = useState<DietaryRequirements>(EMPTY_REQUIREMENTS);
 
   const handleNext = () => {
     setStep(step + 1);
@@ -80,7 +55,7 @@ function App() {
     setStep(step - 1);
   };
 
-  const handleRequirementsChange = (newRequirements: any) => {
+  const handleRequirementsChange = (newRequirements: DietaryRequirements) => {
     setRequirements(newRequirements);
   };
 
@@ -93,7 +68,7 @@ function App() {
         <>
           <Box
             component="header"
-            sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 3, p: 'clamp(20px, 2.8vw, 40px)' }}
+            sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 3, p: PAGE_MARGIN }}
           >
             <Box
               component="button"
@@ -114,10 +89,13 @@ function App() {
             </Button>
           </Box>
 
-          <Box component="main" sx={{ maxWidth: 'calc(600px + clamp(20px, 2.8vw, 40px) * 2)', px: 'clamp(20px, 2.8vw, 40px)', pt: 'clamp(40px, 8vw, 120px)', pb: 15 }}>
-            <Typography variant="h1" sx={{ mb: 6 }}>
-              {t('dietary.title')}
-            </Typography>
+          <Box component="main" sx={{ maxWidth: `calc(600px + ${PAGE_MARGIN} * 2)`, px: PAGE_MARGIN, pt: '0px', pb: 15 }}>
+            {/* the result page writes its own heading, in the waiter's language */}
+            {step !== 3 && (
+              <Typography variant="h1" sx={pageTitleSx}>
+                {t('dietary.title')}
+              </Typography>
+            )}
 
             {step === 1 && (
               <LanguageSelector onNext={handleNext} />

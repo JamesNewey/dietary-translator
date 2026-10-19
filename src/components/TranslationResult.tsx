@@ -3,27 +3,14 @@ import { useTranslation } from 'react-i18next';
 import { Box, Button, MenuItem, Select, Typography } from '@mui/material';
 import { DietaryRequirements } from '../types';
 import FlagIcon from './FlagIcon';
+import { pageTitleSx } from '../theme';
+import { CATEGORIES, Category, LANGUAGES, PAGE_MARGIN } from '../constants';
 
 interface TranslationResultProps {
   requirements: DietaryRequirements;
   onBack: () => void;
 }
 
-const languages = [
-  { code: 'en', name: 'English' },
-  { code: 'es', name: 'Spanish' },
-  { code: 'fr', name: 'French' },
-  { code: 'de', name: 'German' },
-  { code: 'it', name: 'Italian' },
-  { code: 'pt', name: 'Portuguese' },
-  { code: 'ru', name: 'Russian' },
-  { code: 'zh', name: 'Chinese' },
-  { code: 'ja', name: 'Japanese' },
-  { code: 'ko', name: 'Korean' },
-  { code: 'uk', name: 'Ukrainian' },
-];
-
-const categories: (keyof DietaryRequirements)[] = ['preferences', 'intolerances', 'allergies'];
 
 const TranslationResult: React.FC<TranslationResultProps> = ({
   requirements,
@@ -36,17 +23,17 @@ const TranslationResult: React.FC<TranslationResultProps> = ({
   // interface stays in the visitor's own language and their own version can sit under the card.
   const waiterT = i18n.getFixedT(targetLanguage);
 
-  const ticked = (category: keyof DietaryRequirements) =>
+  const ticked = (category: Category) =>
     Object.entries(requirements[category]).filter(([, value]) => value).map(([key]) => key);
 
   // Some languages have no "I have the following …" sentence; use the group's title rather than
   // falling back to an English sentence on a card the waiter reads.
-  const lead = (category: keyof DietaryRequirements) =>
+  const lead = (category: Category) =>
     i18n.getResource(targetLanguage, 'translation', `dietary.${category}.header`)
       ? waiterT(`dietary.${category}.header`)
       : waiterT(`dietary.${category}.title`);
 
-  const groups = categories.filter((category) => ticked(category).length > 0);
+  const groups = CATEGORIES.filter((category) => ticked(category).length > 0);
   const ownVersion = groups
     .map((category) => ticked(category).map((key) => t(`dietary.${category}.${key}`)).join(', '))
     .join('. ');
@@ -57,11 +44,15 @@ const TranslationResult: React.FC<TranslationResultProps> = ({
 
   return (
     <Box>
+      <Typography variant="h1" lang={targetLanguage} sx={pageTitleSx}>
+        {waiterT('dietary.title')}
+      </Typography>
+
       <Box
         component="article"
         lang={targetLanguage}
         sx={{
-          width: 'min(900px, calc(100vw - clamp(20px, 2.8vw, 40px) * 2))',
+          width: `min(900px, calc(100vw - ${PAGE_MARGIN} * 2))`,
           minHeight: '50svh',
           display: 'flex',
           flexDirection: 'column',
@@ -71,7 +62,7 @@ const TranslationResult: React.FC<TranslationResultProps> = ({
         }}
       >
         <Typography variant="body2" color="text.secondary" sx={{ fontWeight: 500 }}>
-          {languages.find((lang) => lang.code === targetLanguage)?.name ?? targetLanguage}
+          {LANGUAGES.find((lang) => lang.code === targetLanguage)?.name ?? targetLanguage}
         </Typography>
 
         <Box sx={{ mt: 'auto', pt: 5, display: 'flex', flexDirection: 'column', gap: 'clamp(28px, 4vw, 48px)' }}>
@@ -108,7 +99,7 @@ const TranslationResult: React.FC<TranslationResultProps> = ({
             inputProps={{ 'aria-labelledby': 'target-language-label' }}
             sx={{ typography: 'body2' }}
           >
-            {languages.map((language) => (
+            {LANGUAGES.map((language) => (
               <MenuItem key={language.code} value={language.code}>
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
                   <FlagIcon code={language.code} />

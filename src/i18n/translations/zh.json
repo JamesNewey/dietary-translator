@@ -1,7 +1,7 @@
 {
   "language": {
     "select": "选择语言",
-    "detected": "检测到的语言"
+    "yours": "你的语言"
   },
   "dietary": {
     "title": "饮食要求",
@@ -37,4 +37,4 @@
     "back": "返回",
     "translate": "翻译"
   }
-} 
+}

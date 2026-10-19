@@ -1,7 +1,7 @@
 {
   "language": {
     "select": "Vælg Sprog",
-    "detected": "Sprog Opdaget"
+    "yours": "Dit sprog"
   },
   "dietary": {
     "title": "Kostkrav",
@@ -40,4 +40,4 @@
     "back": "Tilbage",
     "translate": "Oversæt"
   }
-} 
+}

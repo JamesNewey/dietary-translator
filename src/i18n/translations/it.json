@@ -1,7 +1,7 @@
 {
   "language": {
     "select": "Seleziona Lingua",
-    "detected": "Lingua Rilevata"
+    "yours": "La tua lingua"
   },
   "dietary": {
     "title": "Requisiti Alimentari",
@@ -37,4 +37,4 @@
     "back": "Indietro",
     "translate": "Traduci"
   }
-} 
+}
