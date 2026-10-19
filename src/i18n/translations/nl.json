@@ -8,31 +8,37 @@
     "preferences": {
       "title": "Dieetvoorkeuren",
       "header": "Ik heb de volgende dieetvoorkeuren:",
-      "vegan": "Veganistisch",
-      "vegetarian": "Vegetarisch",
-      "pescatarian": "Pescotarisch",
-      "halal": "Halal",
-      "kosher": "Kosjer",
-      "glutenFree": "Glutenvrij"
+      "items": {
+        "vegan": "Veganistisch",
+        "vegetarian": "Vegetarisch",
+        "pescatarian": "Pescotarisch",
+        "halal": "Halal",
+        "kosher": "Kosjer",
+        "glutenFree": "Glutenvrij"
+      }
     },
     "intolerances": {
       "title": "Voedingsintoleranties",
       "header": "Ik heb de volgende voedingsintoleranties:",
-      "lactose": "Lactose-intolerantie",
-      "gluten": "Glutenintolerantie",
-      "fructose": "Fructose-intolerantie"
+      "items": {
+        "lactose": "Lactose-intolerantie",
+        "gluten": "Glutenintolerantie",
+        "fructose": "Fructose-intolerantie"
+      }
     },
     "allergies": {
       "title": "Voedingsallergieën",
       "header": "Ik heb de volgende voedingsallergieën:",
-      "nuts": "Noten",
-      "shellfish": "Schaaldieren",
-      "eggs": "Eieren",
-      "milk": "Melk",
-      "soy": "Soja",
-      "wheat": "Tarwe",
-      "fish": "Vis",
-      "coconut": "Kokosnoot"
+      "items": {
+        "nuts": "Noten",
+        "shellfish": "Schaaldieren",
+        "eggs": "Eieren",
+        "milk": "Melk",
+        "soy": "Soja",
+        "wheat": "Tarwe",
+        "fish": "Vis",
+        "coconut": "Kokosnoot"
+      }
     }
   },
   "buttons": {

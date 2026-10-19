@@ -4,6 +4,7 @@ import { keyframes } from '@emotion/react';
 import { Box, Button, Typography } from '@mui/material';
 import FlagIcon from './FlagIcon';
 import Logo from './Logo';
+import ThemeToggle from './ThemeToggle';
 import { Category, EASE_OUT, LANGUAGES, PAGE_MARGIN, needKeys } from '../constants';
 
 // The landing screen, from public/designv2simple/index.html: two halves a step apart in tone,
@@ -59,7 +60,7 @@ const lineUp = keyframes`from { transform: translateY(105%); } to { transform: n
 const rise = keyframes`from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; }`;
 const moving = '@media (prefers-reduced-motion: no-preference)';
 
-// each headline line rises from behind its own baseline
+// the headline rises from behind its own baseline
 const MaskedLine: React.FC<{ index: number; children: React.ReactNode }> = ({ index, children }) => (
   <Box component="span" sx={{ display: 'inline-block', overflow: 'hidden', pb: '0.1em', mb: '-0.1em', verticalAlign: 'top' }}>
     <Box
@@ -105,14 +106,8 @@ const Landing: React.FC<LandingProps> = ({ onStart, darkMode, onToggleMode }) =>
   const card = cardLanguages[shown];
   const waiterT = i18n.getFixedT(card.code);
 
-  let yours = i18n.language;
-  try {
-    yours = new Intl.DisplayNames([i18n.language], { type: 'language' }).of(i18n.language) ?? yours;
-  } catch {
-    // older browsers: the language code will do
-  }
   const ownVersion = example
-    .map(({ category, keys }) => keys.map((key) => t(`dietary.${category}.${key}`)).join(', '))
+    .map(({ category, keys }) => keys.map((key) => t(`dietary.${category}.items.${key}`)).join(', '))
     .join('. ');
 
   return (
@@ -132,8 +127,7 @@ const Landing: React.FC<LandingProps> = ({ onStart, darkMode, onToggleMode }) =>
           {/* centred in the column on desktop, so it lines up with the card instead of sinking on tall screens */}
           <Box sx={{ mt: { xs: 5, md: 'auto' }, mb: { md: 'auto' } }}>
             <Typography variant="h1" sx={(theme) => ({ fontSize: { xs: '10vw', md: theme.typography.h1.fontSize }, textWrap: 'balance' })}>
-              <MaskedLine index={0}>{t('landing.titleLine1')}</MaskedLine>{' '}
-              <MaskedLine index={1}>{t('landing.titleLine2')}</MaskedLine>
+              <MaskedLine index={0}>{t('landing.title')}</MaskedLine>
             </Typography>
             <Typography sx={{ maxWidth: '40ch', mt: 3.5, ...riseIn }}>{t('landing.lead')}</Typography>
             <Box component="ul" sx={{ listStyle: 'none', m: 0, mt: 2, p: 0, display: 'flex', flexDirection: 'column', gap: 0.75, ...riseIn }}>
@@ -170,14 +164,10 @@ const Landing: React.FC<LandingProps> = ({ onStart, darkMode, onToggleMode }) =>
             transition: 'background-color 240ms ease',
           }}
         >
-          <Button
-            variant="text"
-            onClick={onToggleMode}
-            aria-pressed={darkMode}
-            sx={{ position: 'absolute', top: margin, right: margin, minHeight: 0, p: '6px 0', typography: 'body2', fontWeight: 500 }}
-          >
-            {darkMode ? t('landing.lightMode') : t('landing.darkMode')}
-          </Button>
+          {/* level with the logo: the 44px button centres its icon 22px down, the 32px logo 16px down */}
+          <Box sx={{ position: 'absolute', top: `calc(${margin} - 6px)`, right: margin }}>
+            <ThemeToggle dark={darkMode} onToggle={onToggleMode} />
+          </Box>
 
           <Box
             component="figure"
@@ -203,7 +193,7 @@ const Landing: React.FC<LandingProps> = ({ onStart, darkMode, onToggleMode }) =>
               {example.map(({ category, keys }) => (
                 <Box key={category} sx={{ mb: 2.25, '&:last-of-type': { mb: 0 } }}>
                   <Typography variant="h2" component="p" sx={{ fontWeight: 500, lineHeight: 1.2, letterSpacing: 0 }}>
-                    {keys.map((key) => waiterT(`dietary.${category}.${key}`)).join(card.separator)}
+                    {keys.map((key) => waiterT(`dietary.${category}.items.${key}`)).join(card.separator)}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
                     {waiterT(`dietary.${category}.title`)}
@@ -212,7 +202,7 @@ const Landing: React.FC<LandingProps> = ({ onStart, darkMode, onToggleMode }) =>
               ))}
             </Box>
             <Typography component="figcaption" variant="body2" color="text.secondary" sx={{ mt: 3 }}>
-              {ownVersion}. {t('landing.readout', { yours })}
+              {ownVersion}.
             </Typography>
           </Box>
         </Box>
@@ -222,8 +212,7 @@ const Landing: React.FC<LandingProps> = ({ onStart, darkMode, onToggleMode }) =>
         component="footer"
         sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: 1, p: '30px', px: margin, typography: 'body2', color: 'text.secondary' }}
       >
-        <span>{t('landing.free')}</span>
-        <span>© 2026</span>
+        <span>Dietary Translator© 2026</span>
       </Box>
     </>
   );

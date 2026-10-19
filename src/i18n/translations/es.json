@@ -8,31 +8,37 @@
     "preferences": {
       "title": "Preferencias Dietéticas",
       "header": "Tengo las siguientes preferencias dietéticas:",
-      "vegan": "Vegano",
-      "vegetarian": "Vegetariano",
-      "pescatarian": "Pescetariano",
-      "halal": "Halal",
-      "kosher": "Kosher",
-      "glutenFree": "Sin Gluten"
+      "items": {
+        "vegan": "Vegano",
+        "vegetarian": "Vegetariano",
+        "pescatarian": "Pescetariano",
+        "halal": "Halal",
+        "kosher": "Kosher",
+        "glutenFree": "Sin Gluten"
+      }
     },
     "intolerances": {
       "title": "Intolerancias Alimentarias",
       "header": "Tengo las siguientes intolerancias alimentarias:",
-      "lactose": "Intolerancia a la Lactosa",
-      "gluten": "Intolerancia al Gluten",
-      "fructose": "Intolerancia a la Fructosa"
+      "items": {
+        "lactose": "Intolerancia a la Lactosa",
+        "gluten": "Intolerancia al Gluten",
+        "fructose": "Intolerancia a la Fructosa"
+      }
     },
     "allergies": {
       "title": "Alergias Alimentarias",
       "header": "Tengo las siguientes alergias alimentarias:",
-      "nuts": "Frutos Secos",
-      "shellfish": "Mariscos",
-      "eggs": "Huevos",
-      "milk": "Leche",
-      "soy": "Soja",
-      "wheat": "Trigo",
-      "fish": "Pescado",
-      "coconut": "Coco"
+      "items": {
+        "nuts": "Frutos Secos",
+        "shellfish": "Mariscos",
+        "eggs": "Huevos",
+        "milk": "Leche",
+        "soy": "Soja",
+        "wheat": "Trigo",
+        "fish": "Pescado",
+        "coconut": "Coco"
+      }
     }
   },
   "buttons": {

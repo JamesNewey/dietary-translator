@@ -34,9 +34,8 @@ const TranslationResult: React.FC<TranslationResultProps> = ({
       : waiterT(`dietary.${category}.title`);
 
   const groups = CATEGORIES.filter((category) => ticked(category).length > 0);
-  const ownVersion = groups
-    .map((category) => ticked(category).map((key) => t(`dietary.${category}.${key}`)).join(', '))
-    .join('. ');
+  // the card may run wider than the page column; the row under it matches
+  const cardWidth = `min(900px, calc(100vw - ${PAGE_MARGIN} * 2))`;
 
   const handleLanguageChange = (event: any) => {
     setTargetLanguage(event.target.value);
@@ -52,7 +51,7 @@ const TranslationResult: React.FC<TranslationResultProps> = ({
         component="article"
         lang={targetLanguage}
         sx={{
-          width: `min(900px, calc(100vw - ${PAGE_MARGIN} * 2))`,
+          width: cardWidth,
           minHeight: '50svh',
           display: 'flex',
           flexDirection: 'column',
@@ -61,11 +60,7 @@ const TranslationResult: React.FC<TranslationResultProps> = ({
           transition: 'background-color 240ms ease',
         }}
       >
-        <Typography variant="body2" color="text.secondary" sx={{ fontWeight: 500 }}>
-          {LANGUAGES.find((lang) => lang.code === targetLanguage)?.name ?? targetLanguage}
-        </Typography>
-
-        <Box sx={{ mt: 'auto', pt: 5, display: 'flex', flexDirection: 'column', gap: 'clamp(28px, 4vw, 48px)' }}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 'clamp(28px, 4vw, 48px)' }}>
           {groups.map((category) => (
             <Box key={category}>
               <Typography variant="h2" component="p" sx={{ fontWeight: 400 }}>
@@ -75,20 +70,24 @@ const TranslationResult: React.FC<TranslationResultProps> = ({
                 component="p"
                 sx={{ mt: 1, fontSize: 'clamp(2rem, 1.3rem + 3.2vw, 4rem)', fontWeight: 500, lineHeight: 1.1, letterSpacing: '-0.02em' }}
               >
-                {ticked(category).map((key) => waiterT(`dietary.${category}.${key}`)).join(', ')}
+                {ticked(category).map((key) => waiterT(`dietary.${category}.items.${key}`)).join(', ')}
               </Typography>
             </Box>
           ))}
         </Box>
       </Box>
 
-      <Box sx={{ mt: 2.5, display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '16px 32px' }}>
-        {targetLanguage !== i18n.language && ownVersion && (
-          <Typography variant="body2" color="text.secondary" sx={{ maxWidth: '60ch' }}>
-            {ownVersion}
-          </Typography>
-        )}
-        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
+      {/* Back on the left, the language picker on the right, as wide as the card */}
+      <Box
+        sx={{
+          width: cardWidth, mt: 5,
+          display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '16px 32px',
+        }}
+      >
+        <Button variant="outlined" onClick={onBack}>
+          {t('buttons.back')}
+        </Button>
+        <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5, ml: 'auto' }}>
           <Typography variant="body2" component="label" id="target-language-label">
             {t('language.select')}
           </Typography>
@@ -109,12 +108,6 @@ const TranslationResult: React.FC<TranslationResultProps> = ({
             ))}
           </Select>
         </Box>
-      </Box>
-
-      <Box sx={{ mt: 7 }}>
-        <Button variant="outlined" onClick={onBack}>
-          {t('buttons.back')}
-        </Button>
       </Box>
     </Box>
   );

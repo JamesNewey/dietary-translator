@@ -8,31 +8,37 @@
     "preferences": {
       "title": "Ruokavaliomieltymykset",
       "header": "Minulla on seuraavat ruokavaliomieltymykset:",
-      "vegan": "Vegaani",
-      "vegetarian": "Kasvissyöjä",
-      "pescatarian": "Pescetariaani",
-      "halal": "Halal",
-      "kosher": "Kosher",
-      "glutenFree": "Gluteeniton"
+      "items": {
+        "vegan": "Vegaani",
+        "vegetarian": "Kasvissyöjä",
+        "pescatarian": "Pescetariaani",
+        "halal": "Halal",
+        "kosher": "Kosher",
+        "glutenFree": "Gluteeniton"
+      }
     },
     "intolerances": {
       "title": "Ruoka-aineiden sietämättömyydet",
       "header": "Minulla on seuraavat ruoka-aineiden sietämättömyydet:",
-      "lactose": "Laktoosi-intoleranssi",
-      "gluten": "Gluteeni-intoleranssi",
-      "fructose": "Fruktoosi-intoleranssi"
+      "items": {
+        "lactose": "Laktoosi-intoleranssi",
+        "gluten": "Gluteeni-intoleranssi",
+        "fructose": "Fruktoosi-intoleranssi"
+      }
     },
     "allergies": {
       "title": "Ruoka-aineallergiat",
       "header": "Minulla on seuraavat ruoka-aineallergiat:",
-      "nuts": "Pähkinät",
-      "shellfish": "Äyriäiset",
-      "eggs": "Kanamunat",
-      "milk": "Maito",
-      "soy": "Soija",
-      "wheat": "Vehnä",
-      "fish": "Kala",
-      "coconut": "Kookos"
+      "items": {
+        "nuts": "Pähkinät",
+        "shellfish": "Äyriäiset",
+        "eggs": "Kanamunat",
+        "milk": "Maito",
+        "soy": "Soija",
+        "wheat": "Vehnä",
+        "fish": "Kala",
+        "coconut": "Kookos"
+      }
     }
   },
   "buttons": {

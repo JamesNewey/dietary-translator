@@ -91,7 +91,7 @@ const DietaryPreferencesForm: React.FC<DietaryPreferencesFormProps> = ({
         {Object.entries(requirements[category]).map(([key, value]) => (
           <Tick
             key={key}
-            label={t(`dietary.${category}.${key}`)}
+            label={t(`dietary.${category}.items.${key}`)}
             checked={value}
             onChange={handlePreferenceChange(category, key)}
           />

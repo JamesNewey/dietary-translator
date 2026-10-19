@@ -9,10 +9,10 @@ export const LANGUAGES = [
   { code: 'de', name: 'German' },
   { code: 'it', name: 'Italian' },
   { code: 'pt', name: 'Portuguese' },
-  { code: 'ru', name: 'Russian' },
-  { code: 'zh', name: 'Chinese' },
-  { code: 'ja', name: 'Japanese' },
-  { code: 'ko', name: 'Korean' },
+  // { code: 'ru', name: 'Russian' },
+  // { code: 'zh', name: 'Chinese' },
+  // { code: 'ja', name: 'Japanese' },
+  // { code: 'ko', name: 'Korean' },
 ];
 
 export type Category = keyof DietaryRequirements;

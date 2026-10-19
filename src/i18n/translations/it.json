@@ -7,29 +7,35 @@
     "title": "Requisiti Alimentari",
     "preferences": {
       "title": "Preferenze Alimentari",
-      "vegan": "Vegano",
-      "vegetarian": "Vegetariano",
-      "pescatarian": "Pescetariano",
-      "halal": "Halal",
-      "kosher": "Kosher",
-      "glutenFree": "Senza Glutine"
+      "items": {
+        "vegan": "Vegano",
+        "vegetarian": "Vegetariano",
+        "pescatarian": "Pescetariano",
+        "halal": "Halal",
+        "kosher": "Kosher",
+        "glutenFree": "Senza Glutine"
+      }
     },
     "intolerances": {
       "title": "Intolleranze Alimentari",
-      "lactose": "Intolleranza al Lattosio",
-      "gluten": "Intolleranza al Glutine",
-      "fructose": "Intolleranza al Fruttosio"
+      "items": {
+        "lactose": "Intolleranza al Lattosio",
+        "gluten": "Intolleranza al Glutine",
+        "fructose": "Intolleranza al Fruttosio"
+      }
     },
     "allergies": {
       "title": "Allergie Alimentari",
-      "nuts": "Frutta Secca",
-      "shellfish": "Crostacei",
-      "eggs": "Uova",
-      "milk": "Latte",
-      "soy": "Soia",
-      "wheat": "Grano",
-      "fish": "Pesce",
-      "coconut": "Cocco"
+      "items": {
+        "nuts": "Frutta Secca",
+        "shellfish": "Crostacei",
+        "eggs": "Uova",
+        "milk": "Latte",
+        "soy": "Soia",
+        "wheat": "Grano",
+        "fish": "Pesce",
+        "coconut": "Cocco"
+      }
     }
   },
   "buttons": {

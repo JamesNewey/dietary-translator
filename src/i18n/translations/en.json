@@ -8,31 +8,37 @@
     "preferences": {
       "title": "Dietary Preferences",
       "header": "I have the following dietary preferences:",
-      "vegan": "Vegan",
-      "vegetarian": "Vegetarian",
-      "pescatarian": "Pescatarian",
-      "halal": "Halal",
-      "kosher": "Kosher",
-      "glutenFree": "Gluten Free"
+      "items": {
+        "vegan": "Vegan",
+        "vegetarian": "Vegetarian",
+        "pescatarian": "Pescatarian",
+        "halal": "Halal",
+        "kosher": "Kosher",
+        "glutenFree": "Gluten Free"
+      }
     },
     "intolerances": {
       "title": "Food Intolerances",
       "header": "I have the following food intolerances:",
-      "lactose": "Lactose Intolerance",
-      "gluten": "Gluten Intolerance",
-      "fructose": "Fructose Intolerance"
+      "items": {
+        "lactose": "Lactose Intolerance",
+        "gluten": "Gluten Intolerance",
+        "fructose": "Fructose Intolerance"
+      }
     },
     "allergies": {
       "title": "Food Allergies",
       "header": "I have the following food allergies:",
-      "nuts": "Nuts",
-      "shellfish": "Shellfish",
-      "eggs": "Eggs",
-      "milk": "Milk",
-      "soy": "Soy",
-      "wheat": "Wheat",
-      "fish": "Fish",
-      "coconut": "Coconut"
+      "items": {
+        "nuts": "Nuts",
+        "shellfish": "Shellfish",
+        "eggs": "Eggs",
+        "milk": "Milk",
+        "soy": "Soy",
+        "wheat": "Wheat",
+        "fish": "Fish",
+        "coconut": "Coconut"
+      }
     }
   },
   "buttons": {
@@ -41,14 +47,11 @@
     "translate": "Translate"
   },
   "landing": {
-    "titleLine1": "Your diet, in",
-    "titleLine2": "their language",
+    "title": "Your diet, in their language",
     "lead": "Tick what you can’t eat, choose the waiter’s language, and turn your phone round. It’s free, and there’s no account to make.",
     "note": "The translations are a guide. With a severe allergy, always ask to speak to the kitchen as well.",
     "start": "Start translating",
     "example": "An example card, shown in the waiter’s language",
-    "readout": "Written in {{yours}}, shown in the waiter’s.",
-    "free": "Dietary Translator, free to use",
     "darkMode": "Dark mode",
     "lightMode": "Light mode"
   }

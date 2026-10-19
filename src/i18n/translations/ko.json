@@ -7,29 +7,35 @@
     "title": "식이 요구사항",
     "preferences": {
       "title": "식이 선호도",
-      "vegan": "비건",
-      "vegetarian": "채식",
-      "pescatarian": "페스코 채식",
-      "halal": "할랄",
-      "kosher": "코셔",
-      "glutenFree": "글루텐 프리"
+      "items": {
+        "vegan": "비건",
+        "vegetarian": "채식",
+        "pescatarian": "페스코 채식",
+        "halal": "할랄",
+        "kosher": "코셔",
+        "glutenFree": "글루텐 프리"
+      }
     },
     "intolerances": {
       "title": "식품 불내성",
-      "lactose": "유당 불내성",
-      "gluten": "글루텐 불내성",
-      "fructose": "과당 불내성"
+      "items": {
+        "lactose": "유당 불내성",
+        "gluten": "글루텐 불내성",
+        "fructose": "과당 불내성"
+      }
     },
     "allergies": {
       "title": "식품 알레르기",
-      "nuts": "견과류",
-      "shellfish": "갑각류",
-      "eggs": "계란",
-      "milk": "우유",
-      "soy": "대두",
-      "wheat": "밀",
-      "fish": "생선",
-      "coconut": "코코넛"
+      "items": {
+        "nuts": "견과류",
+        "shellfish": "갑각류",
+        "eggs": "계란",
+        "milk": "우유",
+        "soy": "대두",
+        "wheat": "밀",
+        "fish": "생선",
+        "coconut": "코코넛"
+      }
     }
   },
   "buttons": {

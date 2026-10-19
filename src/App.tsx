@@ -3,7 +3,6 @@ import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTranslation } from 'react-i18next';
 import './i18n/config';
@@ -12,6 +11,7 @@ import { EMPTY_REQUIREMENTS, PAGE_MARGIN, THEME_KEY } from './constants';
 import { DietaryRequirements } from './types';
 import Logo from './components/Logo';
 import Landing from './components/Landing';
+import ThemeToggle from './components/ThemeToggle';
 import LanguageSelector from './components/LanguageSelector';
 import DietaryPreferencesForm from './components/DietaryPreferencesForm';
 import TranslationResult from './components/TranslationResult';
@@ -84,9 +84,7 @@ function App() {
               <Logo />
               <span>Dietary Translator</span>
             </Box>
-            <Button variant="text" onClick={toggleMode} aria-pressed={mode === 'dark'} sx={{ minHeight: 0, p: '6px 0', typography: 'body2', fontWeight: 500 }}>
-              {mode === 'dark' ? t('landing.lightMode') : t('landing.darkMode')}
-            </Button>
+            <ThemeToggle dark={mode === 'dark'} onToggle={toggleMode} />
           </Box>
 
           <Box component="main" sx={{ maxWidth: `calc(600px + ${PAGE_MARGIN} * 2)`, px: PAGE_MARGIN, pt: '0px', pb: 15 }}>

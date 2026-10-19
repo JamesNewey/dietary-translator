@@ -8,31 +8,37 @@
     "preferences": {
       "title": "Préférences Alimentaires",
       "header": "J'ai les préférences alimentaires suivantes :",
-      "vegan": "Végétalien",
-      "vegetarian": "Végétarien",
-      "pescatarian": "Pescétarien",
-      "halal": "Halal",
-      "kosher": "Casher",
-      "glutenFree": "Sans Gluten"
+      "items": {
+        "vegan": "Végétalien",
+        "vegetarian": "Végétarien",
+        "pescatarian": "Pescétarien",
+        "halal": "Halal",
+        "kosher": "Casher",
+        "glutenFree": "Sans Gluten"
+      }
     },
     "intolerances": {
       "title": "Intolérances Alimentaires",
       "header": "J'ai les intolérances alimentaires suivantes :",
-      "lactose": "Intolérance au Lactose",
-      "gluten": "Intolérance au Gluten",
-      "fructose": "Intolérance au Fructose"
+      "items": {
+        "lactose": "Intolérance au Lactose",
+        "gluten": "Intolérance au Gluten",
+        "fructose": "Intolérance au Fructose"
+      }
     },
     "allergies": {
       "title": "Allergies Alimentaires",
       "header": "J'ai les allergies alimentaires suivantes :",
-      "nuts": "Noix",
-      "shellfish": "Fruits de Mer",
-      "eggs": "Œufs",
-      "milk": "Lait",
-      "soy": "Soja",
-      "wheat": "Blé",
-      "fish": "Poisson",
-      "coconut": "Noix de Coco"
+      "items": {
+        "nuts": "Noix",
+        "shellfish": "Fruits de Mer",
+        "eggs": "Œufs",
+        "milk": "Lait",
+        "soy": "Soja",
+        "wheat": "Blé",
+        "fish": "Poisson",
+        "coconut": "Noix de Coco"
+      }
     }
   },
   "buttons": {

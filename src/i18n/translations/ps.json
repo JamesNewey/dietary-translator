@@ -8,31 +8,37 @@
     "preferences": {
       "title": "خواړه غوره توبونه",
       "header": "زه لاندې غذايي غوره توبونه لرم:",
-      "vegan": "ویګن",
-      "vegetarian": "سبزی خوړونکی",
-      "pescatarian": "کب خوړونکی",
-      "halal": "حلال",
-      "kosher": "کوشر",
-      "glutenFree": "د ګلوتن څخه پاک"
+      "items": {
+        "vegan": "ویګن",
+        "vegetarian": "سبزی خوړونکی",
+        "pescatarian": "کب خوړونکی",
+        "halal": "حلال",
+        "kosher": "کوشر",
+        "glutenFree": "د ګلوتن څخه پاک"
+      }
     },
     "intolerances": {
       "title": "د خواړو نا تحملی",
       "header": "زه د لاندې خوړو سره نه زغم لرم:",
-      "lactose": "د لاکتوز نا تحملی",
-      "gluten": "د ګلوتن نا تحملی",
-      "fructose": "د فرکټوز نا تحملی"
+      "items": {
+        "lactose": "د لاکتوز نا تحملی",
+        "gluten": "د ګلوتن نا تحملی",
+        "fructose": "د فرکټوز نا تحملی"
+      }
     },
     "allergies": {
       "title": "د خواړو الرژي",
       "header": "زه د لاندې خوړو حساسیت لرم:",
-      "nuts": "بادام",
-      "shellfish": "د سمندر خواړه",
-      "eggs": "هګۍ",
-      "milk": "شیدې",
-      "soy": "سویا",
-      "wheat": "غنم",
-      "fish": "کب",
-      "coconut": "نارګیل"
+      "items": {
+        "nuts": "بادام",
+        "shellfish": "د سمندر خواړه",
+        "eggs": "هګۍ",
+        "milk": "شیدې",
+        "soy": "سویا",
+        "wheat": "غنم",
+        "fish": "کب",
+        "coconut": "نارګیل"
+      }
     }
   },
   "buttons": {

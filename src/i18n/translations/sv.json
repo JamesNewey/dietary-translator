@@ -8,31 +8,37 @@
     "preferences": {
       "title": "Kostpreferenser",
       "header": "Jag har följande kostpreferenser:",
-      "vegan": "Vegan",
-      "vegetarian": "Vegetarisk",
-      "pescatarian": "Pescetarisk",
-      "halal": "Halal",
-      "kosher": "Kosher",
-      "glutenFree": "Glutenfri"
+      "items": {
+        "vegan": "Vegan",
+        "vegetarian": "Vegetarisk",
+        "pescatarian": "Pescetarisk",
+        "halal": "Halal",
+        "kosher": "Kosher",
+        "glutenFree": "Glutenfri"
+      }
     },
     "intolerances": {
       "title": "Matintoleranser",
       "header": "Jag har följande matintoleranser:",
-      "lactose": "Laktosintolerans",
-      "gluten": "Glutenintolerans",
-      "fructose": "Fruktosintolerans"
+      "items": {
+        "lactose": "Laktosintolerans",
+        "gluten": "Glutenintolerans",
+        "fructose": "Fruktosintolerans"
+      }
     },
     "allergies": {
       "title": "Matallergier",
       "header": "Jag har följande matallergier:",
-      "nuts": "Nötter",
-      "shellfish": "Skaldjur",
-      "eggs": "Ägg",
-      "milk": "Mjölk",
-      "soy": "Soja",
-      "wheat": "Vete",
-      "fish": "Fisk",
-      "coconut": "Kokos"
+      "items": {
+        "nuts": "Nötter",
+        "shellfish": "Skaldjur",
+        "eggs": "Ägg",
+        "milk": "Mjölk",
+        "soy": "Soja",
+        "wheat": "Vete",
+        "fish": "Fisk",
+        "coconut": "Kokos"
+      }
     }
   },
   "buttons": {
