@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Box, Button, Typography } from '@mui/material';
 import { DietaryRequirements } from '../types';
-import { Category, EASE_OUT } from '../constants';
+import { Category, EASE_OUT, hasAnyTicked } from '../constants';
 
 interface DietaryPreferencesFormProps {
   requirements: DietaryRequirements;
@@ -79,8 +79,7 @@ const DietaryPreferencesForm: React.FC<DietaryPreferencesFormProps> = ({
     });
   };
 
-  // the card needs at least one need to show
-  const anyTicked = Object.values(requirements).some((group) => Object.values(group).some(Boolean));
+  const anyTicked = hasAnyTicked(requirements);
 
   const renderGroup = (category: Category, first = false) => (
     <Box component="fieldset" sx={{ minWidth: 0, m: 0, mt: first ? 0 : 4, p: 0, border: 0 }}>

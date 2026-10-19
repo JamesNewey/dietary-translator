@@ -4,6 +4,7 @@ import { Box, Button, MenuItem, Select, Typography } from '@mui/material';
 import { DietaryRequirements } from '../types';
 import FlagIcon from './FlagIcon';
 import { pageTitleSx } from '../theme';
+import { loadTargetLanguage, saveTargetLanguage } from '../storage';
 import { CATEGORIES, Category, LANGUAGES, PAGE_MARGIN } from '../constants';
 
 interface TranslationResultProps {
@@ -17,11 +18,11 @@ const TranslationResult: React.FC<TranslationResultProps> = ({
   onBack,
 }) => {
   const { t, i18n } = useTranslation();
-  const [targetLanguage, setTargetLanguage] = useState(i18n.language);
+  const [targetLanguage, setTargetLanguage] = useState(() => loadTargetLanguage() ?? i18n.language);
 
   // The card is written with a translator fixed to the waiter's language, so the rest of the
   // interface stays in the visitor's own language and their own version can sit under the card.
-  const waiterT = i18n.getFixedT(targetLanguage);
+  const targetT = i18n.getFixedT(targetLanguage);
 
   const ticked = (category: Category) =>
     Object.entries(requirements[category]).filter(([, value]) => value).map(([key]) => key);
@@ -30,8 +31,8 @@ const TranslationResult: React.FC<TranslationResultProps> = ({
   // falling back to an English sentence on a card the waiter reads.
   const lead = (category: Category) =>
     i18n.getResource(targetLanguage, 'translation', `dietary.${category}.header`)
-      ? waiterT(`dietary.${category}.header`)
-      : waiterT(`dietary.${category}.title`);
+      ? targetT(`dietary.${category}.header`)
+      : targetT(`dietary.${category}.title`);
 
   const groups = CATEGORIES.filter((category) => ticked(category).length > 0);
   // the card may run wider than the page column; the row under it matches
@@ -39,12 +40,13 @@ const TranslationResult: React.FC<TranslationResultProps> = ({
 
   const handleLanguageChange = (event: any) => {
     setTargetLanguage(event.target.value);
+    saveTargetLanguage(event.target.value);
   };
 
   return (
     <Box>
       <Typography variant="h1" lang={targetLanguage} sx={pageTitleSx}>
-        {waiterT('dietary.title')}
+        {targetT('dietary.title')}
       </Typography>
 
       <Box
@@ -70,7 +72,7 @@ const TranslationResult: React.FC<TranslationResultProps> = ({
                 component="p"
                 sx={{ mt: 1, fontSize: 'clamp(2rem, 1.3rem + 3.2vw, 4rem)', fontWeight: 500, lineHeight: 1.1, letterSpacing: '-0.02em' }}
               >
-                {ticked(category).map((key) => waiterT(`dietary.${category}.items.${key}`)).join(', ')}
+                {ticked(category).map((key) => targetT(`dietary.${category}.items.${key}`)).join(', ')}
               </Typography>
             </Box>
           ))}

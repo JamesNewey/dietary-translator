@@ -7,7 +7,8 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import { useTranslation } from 'react-i18next';
 import './i18n/config';
 import { getTheme, pageTitleSx } from './theme';
-import { EMPTY_REQUIREMENTS, PAGE_MARGIN, THEME_KEY } from './constants';
+import { PAGE_MARGIN, THEME_KEY, hasAnyTicked } from './constants';
+import { hasVisited, loadRequirements, markVisited, saveRequirements } from './storage';
 import { DietaryRequirements } from './types';
 import Logo from './components/Logo';
 import Landing from './components/Landing';
@@ -43,11 +44,13 @@ function App() {
       // storage can be unavailable (private windows); the choice then lasts for this visit only
     }
   };
-  // step 0 is the landing screen; 1–3 are language, requirements and the card
-  const [step, setStep] = useState(0);
-  const [requirements, setRequirements] = useState<DietaryRequirements>(EMPTY_REQUIREMENTS);
+  const [requirements, setRequirements] = useState<DietaryRequirements>(loadRequirements);
+  // step 0 is the landing screen; 1–3 are language, requirements and the card.
+  // Return visits skip the landing screen, and go straight to the card if something is ticked.
+  const [step, setStep] = useState(() => (hasAnyTicked(requirements) ? 3 : hasVisited() ? 1 : 0));
 
   const handleNext = () => {
+    if (step === 0) markVisited();
     setStep(step + 1);
   };
 
@@ -57,6 +60,7 @@ function App() {
 
   const handleRequirementsChange = (newRequirements: DietaryRequirements) => {
     setRequirements(newRequirements);
+    saveRequirements(newRequirements);
   };
 
   return (

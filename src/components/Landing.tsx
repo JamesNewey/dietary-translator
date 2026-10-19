@@ -104,7 +104,7 @@ const Landing: React.FC<LandingProps> = ({ onStart, darkMode, onToggleMode }) =>
   }, [paused, cardLanguages.length]);
 
   const card = cardLanguages[shown];
-  const waiterT = i18n.getFixedT(card.code);
+  const targetT = i18n.getFixedT(card.code);
 
   const ownVersion = example
     .map(({ category, keys }) => keys.map((key) => t(`dietary.${category}.items.${key}`)).join(', '))
@@ -193,10 +193,10 @@ const Landing: React.FC<LandingProps> = ({ onStart, darkMode, onToggleMode }) =>
               {example.map(({ category, keys }) => (
                 <Box key={category} sx={{ mb: 2.25, '&:last-of-type': { mb: 0 } }}>
                   <Typography variant="h2" component="p" sx={{ fontWeight: 500, lineHeight: 1.2, letterSpacing: 0 }}>
-                    {keys.map((key) => waiterT(`dietary.${category}.items.${key}`)).join(card.separator)}
+                    {keys.map((key) => targetT(`dietary.${category}.items.${key}`)).join(card.separator)}
                   </Typography>
                   <Typography variant="body2" color="text.secondary">
-                    {waiterT(`dietary.${category}.title`)}
+                    {targetT(`dietary.${category}.title`)}
                   </Typography>
                 </Box>
               ))}

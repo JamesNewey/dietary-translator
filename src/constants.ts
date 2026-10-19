@@ -47,6 +47,10 @@ export const EMPTY_REQUIREMENTS: DietaryRequirements = {
   },
 };
 
+// Whether at least one need is ticked; the card needs one to show.
+export const hasAnyTicked = (requirements: DietaryRequirements) =>
+  Object.values(requirements).some((group) => Object.values(group).some(Boolean));
+
 // The needs in one group, in order.
 export const needKeys = (category: Category): string[] => Object.keys(EMPTY_REQUIREMENTS[category]);
 
