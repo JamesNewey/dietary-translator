@@ -17,7 +17,7 @@ export interface FoodAllergies {
   nuts: boolean;
   shellfish: boolean;
   eggs: boolean;
-  milk: boolean;
+  dairy: boolean;
   soy: boolean;
   wheat: boolean;
   fish: boolean;

@@ -39,7 +39,7 @@ export const EMPTY_REQUIREMENTS: DietaryRequirements = {
     nuts: false,
     shellfish: false,
     eggs: false,
-    milk: false,
+    dairy: false,
     soy: false,
     wheat: false,
     fish: false,

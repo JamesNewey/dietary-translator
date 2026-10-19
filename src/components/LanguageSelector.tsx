@@ -6,10 +6,11 @@ import { LANGUAGES } from '../constants';
 
 interface LanguageSelectorProps {
   onNext: () => void;
+  onBack: () => void;
 }
 
 
-const LanguageSelector: React.FC<LanguageSelectorProps> = ({ onNext }) => {
+const LanguageSelector: React.FC<LanguageSelectorProps> = ({ onNext, onBack }) => {
   const { t, i18n } = useTranslation();
 
   const handleLanguageChange = (event: any) => {
@@ -39,9 +40,12 @@ const LanguageSelector: React.FC<LanguageSelectorProps> = ({ onNext }) => {
         ))}
       </Select>
 
-      <Box sx={{ mt: 7 }}>
+      <Box sx={{ mt: 7, display: 'flex', alignItems: 'center', gap: 3 }}>
         <Button variant="contained" color="primary" onClick={onNext}>
           {t('buttons.next')}
+        </Button>
+        <Button variant="outlined" onClick={onBack}>
+          {t('buttons.back')}
         </Button>
       </Box>
     </Box>

@@ -106,7 +106,7 @@ function App() {
             )}
 
             {step === 1 && (
-              <LanguageSelector onNext={handleNext} />
+              <LanguageSelector onNext={handleNext} onBack={handleBack} />
             )}
 
             {step === 2 && (

@@ -21,10 +21,10 @@ Each language is one JSON file in [`src/i18n/translations/`](src/i18n/translatio
 | Portuguese | `pt` | Yes | Missing start page | High | No |
 | German | `de` | Yes | Missing start page and card lead-ins | High | No |
 | Italian | `it` | Yes | Missing start page and card lead-ins | High | No |
-| Russian | `ru` | Yes | Missing start page and card lead-ins | Medium | No |
-| Chinese (simplified) | `zh` | Yes | Missing start page and card lead-ins | Medium | No |
-| Japanese | `ja` | Yes | Missing start page and card lead-ins | Medium | No |
-| Korean | `ko` | Yes | Missing start page and card lead-ins | Medium | No |
+| Russian | `ru` | No | Missing start page and card lead-ins | Medium | No |
+| Chinese (simplified) | `zh` | No | Missing start page and card lead-ins | Medium | No |
+| Japanese | `ja` | No | Missing start page and card lead-ins | Medium | No |
+| Korean | `ko` | No | Missing start page and card lead-ins | Medium | No |
 | Czech | `cs` | No | Ready apart from start page | Medium | No |
 | Danish | `da` | No | Ready apart from start page | High | No |
 | Dutch | `nl` | No | Ready apart from start page | High | No |

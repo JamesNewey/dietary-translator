@@ -110,16 +110,23 @@ const Landing: React.FC<LandingProps> = ({ onStart, darkMode, onToggleMode }) =>
     .map(({ category, keys }) => keys.map((key) => t(`dietary.${category}.items.${key}`)).join(', '))
     .join('. ');
 
+  const startButton = (
+    <Button variant="contained" color="primary" onClick={onStart}>
+      {t('landing.start')}
+    </Button>
+  );
+
   return (
     <>
       <Box sx={{ position: 'relative', display: 'grid', gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' }, minHeight: { md: '100svh' } }}>
-        <Box sx={{ display: 'flex', flexDirection: 'column', p: margin, pt: { xs: 0, md: margin } }}>
-          <Box
-            sx={{
-              display: 'inline-flex', alignItems: 'center', gap: 1.5, fontWeight: 500,
-              position: { xs: 'absolute', md: 'static' }, top: margin, left: margin, zIndex: 1,
-            }}
-          >
+        {/* top-right of the page in both layouts; level with the logo: the 44px button centres its icon
+            22px down, the 32px logo 16px down */}
+        <Box sx={{ position: 'absolute', top: `calc(${margin} - 6px)`, right: margin, zIndex: 1 }}>
+          <ThemeToggle dark={darkMode} onToggle={onToggleMode} />
+        </Box>
+
+        <Box sx={{ display: 'flex', flexDirection: 'column', p: margin }}>
+          <Box sx={{ display: 'inline-flex', alignItems: 'center', gap: 1.5, fontWeight: 500 }}>
             <Logo />
             <span>Dietary Translator</span>
           </Box>
@@ -148,27 +155,21 @@ const Landing: React.FC<LandingProps> = ({ onStart, darkMode, onToggleMode }) =>
             <Typography variant="body2" color="text.secondary" sx={{ maxWidth: '44ch', mt: 1.5, ...riseIn }}>
               {t('landing.note')}
             </Typography>
-            <Box sx={{ mt: 4.5, ...riseIn }}>
-              <Button variant="contained" color="primary" onClick={onStart}>
-                {t('landing.start')}
-              </Button>
+            {/* beside the text on desktop; on a phone it follows the example card (below) */}
+            <Box sx={{ display: { xs: 'none', md: 'block' }, mt: 4.5, ...riseIn }}>
+              {startButton}
             </Box>
           </Box>
         </Box>
 
         <Box
           sx={{
-            order: { xs: -1, md: 0 }, position: 'relative', display: 'grid', placeItems: 'center',
-            minHeight: { xs: '58svh', md: 'auto' }, bgcolor: 'stage',
-            p: `calc(${margin} * 2) ${margin}`, pt: { xs: '72px', md: `calc(${margin} * 2)` },
+            // on a phone the card follows the text
+            display: 'grid', placeItems: 'center', bgcolor: 'stage',
+            p: `calc(${margin} * 2) ${margin}`,
             transition: 'background-color 240ms ease',
           }}
         >
-          {/* level with the logo: the 44px button centres its icon 22px down, the 32px logo 16px down */}
-          <Box sx={{ position: 'absolute', top: `calc(${margin} - 6px)`, right: margin }}>
-            <ThemeToggle dark={darkMode} onToggle={onToggleMode} />
-          </Box>
-
           <Box
             component="figure"
             aria-label={t('landing.example')}
@@ -206,13 +207,17 @@ const Landing: React.FC<LandingProps> = ({ onStart, darkMode, onToggleMode }) =>
             </Typography>
           </Box>
         </Box>
+
+        <Box sx={{ display: { xs: 'block', md: 'none' }, p: margin, pt: 4.5 }}>
+          {startButton}
+        </Box>
       </Box>
 
       <Box
         component="footer"
         sx={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: 1, p: '30px', px: margin, typography: 'body2', color: 'text.secondary' }}
       >
-        <span>Dietary Translator© 2026</span>
+        <span>Dietary Translator © 2026</span>
       </Box>
     </>
   );

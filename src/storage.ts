@@ -8,6 +8,12 @@ const REQUIREMENTS_KEY = 'dt-requirements';
 const TARGET_LANGUAGE_KEY = 'dt-target-language';
 const VISITED_KEY = 'dt-visited';
 
+// Needs that were renamed, old key to new, so a tick saved under the old name isn't lost.
+// Losing a saved allergy without telling anyone would be worse than any other bug here.
+const RENAMED: Record<string, Record<string, string>> = {
+  allergies: { milk: 'dairy' },
+};
+
 const read = (key: string): string | null => {
   try {
     return localStorage.getItem(key);
@@ -39,6 +45,9 @@ export const loadRequirements = (): DietaryRequirements => {
     const group = result[category] as unknown as Record<string, boolean>;
     Object.keys(group).forEach((key) => {
       group[key] = saved?.[category]?.[key] === true;
+    });
+    Object.entries(RENAMED[category] ?? {}).forEach(([oldKey, newKey]) => {
+      if (saved?.[category]?.[oldKey] === true && newKey in group) group[newKey] = true;
     });
   });
   return result;
