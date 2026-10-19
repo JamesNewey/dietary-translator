@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import Box from '@mui/material/Box';
@@ -9,6 +9,7 @@ import './i18n/config';
 import { getTheme, pageTitleSx } from './theme';
 import { PAGE_MARGIN, THEME_KEY, hasAnyTicked } from './constants';
 import { hasVisited, loadRequirements, markVisited, saveRequirements } from './storage';
+import { trackScreen } from './analytics';
 import { DietaryRequirements } from './types';
 import Logo from './components/Logo';
 import Landing from './components/Landing';
@@ -48,6 +49,11 @@ function App() {
   // step 0 is the landing screen; 1–3 are language, requirements and the card.
   // Return visits skip the landing screen, and go straight to the card if something is ticked.
   const [step, setStep] = useState(() => (hasAnyTicked(requirements) ? 3 : hasVisited() ? 1 : 0));
+
+  // report each screen to Google Analytics as it's shown
+  useEffect(() => {
+    trackScreen(step);
+  }, [step]);
 
   const handleNext = () => {
     if (step === 0) markVisited();

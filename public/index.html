@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LKD5R0NL96"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      // page views are sent by the app as the screen changes (src/analytics.ts), not on load
+      gtag('config', 'G-LKD5R0NL96', { send_page_view: false });
+    </script>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/logo.svg" type="image/svg+xml" />
     <link rel="alternate icon" href="%PUBLIC_URL%/favicon.ico" />
