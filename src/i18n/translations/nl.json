@@ -31,7 +31,8 @@
       "header": "Ik heb de volgende voedingsallergieën:",
       "items": {
         "nuts": "Noten",
-        "shellfish": "Schaaldieren",
+        "crustaceans": "Schaaldieren",
+        "molluscs": "Weekdieren",
         "eggs": "Eieren",
         "dairy": "Zuivelproducten",
         "soy": "Soja",

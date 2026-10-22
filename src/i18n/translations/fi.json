@@ -31,7 +31,8 @@
       "header": "Minulla on seuraavat ruoka-aineallergiat:",
       "items": {
         "nuts": "Pähkinät",
-        "shellfish": "Äyriäiset",
+        "crustaceans": "Äyriäiset",
+        "molluscs": "Nilviäiset",
         "eggs": "Kanamunat",
         "dairy": "Maitotuotteet",
         "soy": "Soija",

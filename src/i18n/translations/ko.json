@@ -7,6 +7,7 @@
     "title": "식이 요구사항",
     "preferences": {
       "title": "식이 선호도",
+      "header": "다음과 같은 식단 제한이 있습니다:",
       "items": {
         "vegan": "비건",
         "vegetarian": "채식",
@@ -18,6 +19,7 @@
     },
     "intolerances": {
       "title": "식품 불내성",
+      "header": "다음과 같은 식품 불내성이 있습니다:",
       "items": {
         "lactose": "유당 불내성",
         "gluten": "글루텐 불내성",
@@ -26,9 +28,11 @@
     },
     "allergies": {
       "title": "식품 알레르기",
+      "header": "다음 식품에 알레르기가 있습니다:",
       "items": {
         "nuts": "견과류",
-        "shellfish": "갑각류",
+        "crustaceans": "갑각류",
+        "molluscs": "연체동물",
         "eggs": "계란",
         "dairy": "유제품",
         "soy": "대두",

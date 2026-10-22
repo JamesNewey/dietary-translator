@@ -31,7 +31,8 @@
       "header": "我對以下食物過敏：",
       "items": {
         "nuts": "堅果",
-        "shellfish": "貝類",
+        "crustaceans": "甲殼類",
+        "molluscs": "軟體動物",
         "eggs": "雞蛋",
         "dairy": "乳製品",
         "soy": "大豆",

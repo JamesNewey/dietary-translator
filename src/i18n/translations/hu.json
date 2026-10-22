@@ -31,7 +31,8 @@
       "header": "A következő ételallergiáim vannak:",
       "items": {
         "nuts": "Diófélék",
-        "shellfish": "Rákfélék",
+        "crustaceans": "Rákfélék",
+        "molluscs": "Puhatestűek",
         "eggs": "Tojás",
         "dairy": "Tejtermékek",
         "soy": "Szója",

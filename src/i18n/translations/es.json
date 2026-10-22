@@ -1,12 +1,12 @@
 {
   "language": {
-    "select": "Seleccionar Idioma",
+    "select": "Seleccionar idioma",
     "yours": "Tu idioma"
   },
   "dietary": {
-    "title": "Requisitos Dietéticos",
+    "title": "Requisitos dietéticos",
     "preferences": {
-      "title": "Preferencias Dietéticas",
+      "title": "Preferencias dietéticas",
       "header": "Tengo las siguientes preferencias dietéticas:",
       "items": {
         "vegan": "Vegano",
@@ -14,26 +14,27 @@
         "pescatarian": "Pescetariano",
         "halal": "Halal",
         "kosher": "Kosher",
-        "glutenFree": "Sin Gluten"
+        "glutenFree": "Sin gluten"
       }
     },
     "intolerances": {
-      "title": "Intolerancias Alimentarias",
+      "title": "Intolerancias alimentarias",
       "header": "Tengo las siguientes intolerancias alimentarias:",
       "items": {
-        "lactose": "Intolerancia a la Lactosa",
-        "gluten": "Intolerancia al Gluten",
-        "fructose": "Intolerancia a la Fructosa"
+        "lactose": "Intolerancia a la lactosa",
+        "gluten": "Intolerancia al gluten",
+        "fructose": "Intolerancia a la fructosa"
       }
     },
     "allergies": {
-      "title": "Alergias Alimentarias",
+      "title": "Alergias alimentarias",
       "header": "Tengo las siguientes alergias alimentarias:",
       "items": {
-        "nuts": "Frutos Secos",
-        "shellfish": "Mariscos",
+        "nuts": "Frutos secos",
+        "crustaceans": "Crustáceos",
+        "molluscs": "Moluscos",
         "eggs": "Huevos",
-        "dairy": "Productos Lácteos",
+        "dairy": "Productos lácteos",
         "soy": "Soja",
         "wheat": "Trigo",
         "fish": "Pescado",
@@ -45,5 +46,14 @@
     "next": "Siguiente",
     "back": "Atrás",
     "translate": "Traducir"
+  },
+  "landing": {
+    "title": "Tu dieta, en su idioma",
+    "lead": "Marca lo que no puedes comer, elige el idioma del camarero y gira el teléfono para mostrárselo. Es gratis y no necesitas crear una cuenta.",
+    "note": "Estas traducciones son orientativas. Si tienes una alergia grave, pide siempre hablar también con el personal de cocina.",
+    "start": "Empezar a traducir",
+    "example": "Una tarjeta de ejemplo en el idioma del camarero",
+    "darkMode": "Modo oscuro",
+    "lightMode": "Modo claro"
   }
 }

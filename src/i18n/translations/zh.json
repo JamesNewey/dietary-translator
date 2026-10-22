@@ -7,6 +7,7 @@
     "title": "饮食要求",
     "preferences": {
       "title": "饮食偏好",
+      "header": "我有以下饮食偏好：",
       "items": {
         "vegan": "纯素",
         "vegetarian": "素食",
@@ -18,6 +19,7 @@
     },
     "intolerances": {
       "title": "食物不耐受",
+      "header": "我有以下食物不耐受：",
       "items": {
         "lactose": "乳糖不耐受",
         "gluten": "麸质不耐受",
@@ -26,9 +28,11 @@
     },
     "allergies": {
       "title": "食物过敏",
+      "header": "我对以下食物过敏：",
       "items": {
         "nuts": "坚果",
-        "shellfish": "贝类",
+        "crustaceans": "甲壳类动物",
+        "molluscs": "软体动物",
         "eggs": "鸡蛋",
         "dairy": "乳制品",
         "soy": "大豆",

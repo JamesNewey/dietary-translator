@@ -7,6 +7,7 @@
     "title": "食事要件",
     "preferences": {
       "title": "食事の好み",
+      "header": "次の食事制限があります：",
       "items": {
         "vegan": "完全菜食",
         "vegetarian": "菜食",
@@ -18,6 +19,7 @@
     },
     "intolerances": {
       "title": "食物不耐症",
+      "header": "次の食物不耐症があります：",
       "items": {
         "lactose": "乳糖不耐症",
         "gluten": "グルテン不耐症",
@@ -26,9 +28,11 @@
     },
     "allergies": {
       "title": "食物アレルギー",
+      "header": "次の食物アレルギーがあります：",
       "items": {
         "nuts": "ナッツ",
-        "shellfish": "甲殻類",
+        "crustaceans": "甲殻類",
+        "molluscs": "軟体動物",
         "eggs": "卵",
         "dairy": "乳製品",
         "soy": "大豆",

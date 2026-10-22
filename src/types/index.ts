@@ -15,7 +15,8 @@ export interface FoodIntolerances {
 
 export interface FoodAllergies {
   nuts: boolean;
-  shellfish: boolean;
+  crustaceans: boolean;
+  molluscs: boolean;
   eggs: boolean;
   dairy: boolean;
   soy: boolean;

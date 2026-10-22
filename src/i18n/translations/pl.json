@@ -31,7 +31,8 @@
       "header": "Mam następujące alergie pokarmowe:",
       "items": {
         "nuts": "Orzechy",
-        "shellfish": "Skorupiaki",
+        "crustaceans": "Skorupiaki",
+        "molluscs": "Mięczaki",
         "eggs": "Jajka",
         "dairy": "Produkty Mleczne",
         "soy": "Soja",

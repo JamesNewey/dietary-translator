@@ -31,7 +31,8 @@
       "header": "I have the following food allergies:",
       "items": {
         "nuts": "Nuts",
-        "shellfish": "Shellfish",
+        "crustaceans": "Crustaceans",
+        "molluscs": "Molluscs",
         "eggs": "Eggs",
         "dairy": "Dairy products",
         "soy": "Soy",

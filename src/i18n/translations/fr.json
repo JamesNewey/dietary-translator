@@ -1,43 +1,44 @@
 {
   "language": {
-    "select": "Sélectionner la Langue",
+    "select": "Sélectionner la langue",
     "yours": "Votre langue"
   },
   "dietary": {
-    "title": "Exigences Alimentaires",
+    "title": "Exigences alimentaires",
     "preferences": {
-      "title": "Préférences Alimentaires",
+      "title": "Préférences alimentaires",
       "header": "J'ai les préférences alimentaires suivantes :",
       "items": {
-        "vegan": "Végétalien",
+        "vegan": "Végane",
         "vegetarian": "Végétarien",
         "pescatarian": "Pescétarien",
         "halal": "Halal",
         "kosher": "Casher",
-        "glutenFree": "Sans Gluten"
+        "glutenFree": "Sans gluten"
       }
     },
     "intolerances": {
-      "title": "Intolérances Alimentaires",
+      "title": "Intolérances alimentaires",
       "header": "J'ai les intolérances alimentaires suivantes :",
       "items": {
-        "lactose": "Intolérance au Lactose",
-        "gluten": "Intolérance au Gluten",
-        "fructose": "Intolérance au Fructose"
+        "lactose": "Intolérance au lactose",
+        "gluten": "Intolérance au gluten",
+        "fructose": "Intolérance au fructose"
       }
     },
     "allergies": {
-      "title": "Allergies Alimentaires",
+      "title": "Allergies alimentaires",
       "header": "J'ai les allergies alimentaires suivantes :",
       "items": {
         "nuts": "Noix",
-        "shellfish": "Fruits de Mer",
+        "crustaceans": "Crustacés",
+        "molluscs": "Mollusques",
         "eggs": "Œufs",
-        "dairy": "Produits Laitiers",
+        "dairy": "Produits laitiers",
         "soy": "Soja",
         "wheat": "Blé",
         "fish": "Poisson",
-        "coconut": "Noix de Coco"
+        "coconut": "Noix de coco"
       }
     }
   },
@@ -45,5 +46,14 @@
     "next": "Suivant",
     "back": "Retour",
     "translate": "Traduire"
+  },
+  "landing": {
+    "title": "Votre régime alimentaire, dans leur langue",
+    "lead": "Cochez les aliments que vous ne pouvez pas manger, choisissez la langue du serveur et retournez votre téléphone pour lui montrer la traduction. C'est gratuit et vous n'avez pas besoin de créer de compte.",
+    "note": "Ces traductions sont fournies à titre indicatif. En cas d'allergie grave, demandez toujours à parler également au personnel de cuisine.",
+    "start": "Commencer la traduction",
+    "example": "Exemple de carte affichée dans la langue du serveur",
+    "darkMode": "Mode sombre",
+    "lightMode": "Mode clair"
   }
 }

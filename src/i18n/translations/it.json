@@ -1,12 +1,13 @@
 {
   "language": {
-    "select": "Seleziona Lingua",
+    "select": "Seleziona lingua",
     "yours": "La tua lingua"
   },
   "dietary": {
-    "title": "Requisiti Alimentari",
+    "title": "Requisiti alimentari",
     "preferences": {
       "title": "Preferenze Alimentari",
+      "header": "Ho le seguenti preferenze alimentari",
       "items": {
         "vegan": "Vegano",
         "vegetarian": "Vegetariano",
@@ -17,18 +18,21 @@
       }
     },
     "intolerances": {
-      "title": "Intolleranze Alimentari",
+      "title": "Intolleranze alimentari",
+      "header": "Ho le seguenti intolleranze alimentari",
       "items": {
-        "lactose": "Intolleranza al Lattosio",
-        "gluten": "Intolleranza al Glutine",
-        "fructose": "Intolleranza al Fruttosio"
+        "lactose": "Intolleranza al lactose",
+        "gluten": "Intolleranza al glutine",
+        "fructose": "Intolleranza al fruttosio"
       }
     },
     "allergies": {
       "title": "Allergie Alimentari",
+      "header": "Ho le seguenti allergie alimentari", 
       "items": {
         "nuts": "Frutta Secca",
-        "shellfish": "Crostacei",
+        "crustaceans": "Crostacei",
+        "molluscs": "Molluschi",
         "eggs": "Uova",
         "dairy": "Latticini",
         "soy": "Soia",
@@ -42,5 +46,14 @@
     "next": "Avanti",
     "back": "Indietro",
     "translate": "Traduci"
+  },
+  "landing": {
+    "title": "La tua alimentazione, nella loro lingua",
+    "lead": "Seleziona ciò che non puoi mangiare, scegli la lingua del cameriere e gira il telefono per mostrargli la traduzione. È gratis e non devi creare un account.",
+    "note": "Le traduzioni sono indicative. In caso di allergia grave, chiedi sempre di parlare anche con il personale della cucina.",
+    "start": "Inizia a tradurre",
+    "example": "Esempio di scheda nella lingua del cameriere",
+    "darkMode": "Modalità scura",
+    "lightMode": "Modalità chiara"
   }
 }

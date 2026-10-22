@@ -1,12 +1,12 @@
 {
   "language": {
-    "select": "Selecionar Idioma",
+    "select": "Selecionar idioma",
     "yours": "O seu idioma"
   },
   "dietary": {
-    "title": "Requisitos Alimentares",
+    "title": "Requisitos alimentares",
     "preferences": {
-      "title": "Preferências Alimentares",
+      "title": "Preferências alimentares",
       "header": "Tenho as seguintes preferências alimentares:",
       "items": {
         "vegan": "Vegano",
@@ -14,26 +14,27 @@
         "pescatarian": "Pescetariano",
         "halal": "Halal",
         "kosher": "Kosher",
-        "glutenFree": "Sem Glúten"
+        "glutenFree": "Sem glúten"
       }
     },
     "intolerances": {
-      "title": "Intolerâncias Alimentares",
+      "title": "Intolerâncias alimentares",
       "header": "Tenho as seguintes intolerâncias alimentares:",
       "items": {
-        "lactose": "Intolerância à Lactose",
-        "gluten": "Intolerância ao Glúten",
-        "fructose": "Intolerância à Frutose"
+        "lactose": "Intolerância à lactose",
+        "gluten": "Intolerância ao glúten",
+        "fructose": "Intolerância à frutose"
       }
     },
     "allergies": {
-      "title": "Alergias Alimentares",
+      "title": "Alergias alimentares",
       "header": "Tenho as seguintes alergias alimentares:",
       "items": {
-        "nuts": "Frutos Secos",
-        "shellfish": "Mariscos",
+        "nuts": "Frutos secos",
+        "crustaceans": "Crustáceos",
+        "molluscs": "Moluscos",
         "eggs": "Ovos",
-        "dairy": "Laticínios",
+        "dairy": "Produtos lácteos",
         "soy": "Soja",
         "wheat": "Trigo",
         "fish": "Peixe",

@@ -1,12 +1,13 @@
 {
   "language": {
-    "select": "Sprache Auswählen",
+    "select": "Sprache auswählen",
     "yours": "Ihre Sprache"
   },
   "dietary": {
     "title": "Ernährungsanforderungen",
     "preferences": {
       "title": "Ernährungspräferenzen",
+      "header": "Ich habe folgende Ernährungspräferenzen:",
       "items": {
         "vegan": "Vegan",
         "vegetarian": "Vegetarisch",
@@ -18,6 +19,7 @@
     },
     "intolerances": {
       "title": "Lebensmittelunverträglichkeiten",
+      "header": "Ich habe folgende Lebensmittelunverträglichkeiten:",
       "items": {
         "lactose": "Laktoseintoleranz",
         "gluten": "Glutenunverträglichkeit",
@@ -26,9 +28,11 @@
     },
     "allergies": {
       "title": "Lebensmittelallergien",
+      "header": "Ich habe folgende Lebensmittelallergien:",
       "items": {
         "nuts": "Nüsse",
-        "shellfish": "Schalentiere",
+        "crustaceans": "Krebstiere",
+        "molluscs": "Weichtiere",
         "eggs": "Eier",
         "dairy": "Milchprodukte",
         "soy": "Soja",
@@ -42,5 +46,14 @@
     "next": "Weiter",
     "back": "Zurück",
     "translate": "Übersetzen"
+  },
+  "landing": {
+    "title": "Ihre Ernährung – in der Sprache Ihrer Gastgeber",
+    "lead": "Wählen Sie aus, was Sie nicht essen können, wählen Sie die Sprache des Servicepersonals und drehen Sie Ihr Handy um, damit es die Übersetzung lesen kann. Die Nutzung ist kostenlos und Sie müssen kein Konto erstellen.",
+    "note": "Die Übersetzungen dienen als Orientierung. Bei schweren Allergien sollten Sie immer auch mit dem Küchenpersonal sprechen.",
+    "start": "Übersetzung starten",
+    "example": "Beispiel einer Karte in der Sprache des Servicepersonals",
+    "darkMode": "Dunkler Modus",
+    "lightMode": "Heller Modus"
   }
 }

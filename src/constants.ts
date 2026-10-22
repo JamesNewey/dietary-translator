@@ -37,7 +37,8 @@ export const EMPTY_REQUIREMENTS: DietaryRequirements = {
   },
   allergies: {
     nuts: false,
-    shellfish: false,
+    crustaceans: false,
+    molluscs: false,
     eggs: false,
     dairy: false,
     soy: false,

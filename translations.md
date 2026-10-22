@@ -1,30 +1,29 @@
 # Translations
 
-Status of the app's translations as of 19 October 2026.
+Status of the app's translations as of 22 October 2026.
 
 Each language is one JSON file in [`src/i18n/translations/`](src/i18n/translations/), named by its language code. English ([`en.json`](src/i18n/translations/en.json)) is the reference: every other file should have the same keys. Any key that is missing falls back to English.
 
 ## Summary
 
 - There are **30 translation files**, but the app **loads only 10** of them (see [`src/i18n/config.ts`](src/i18n/config.ts)). The other 20 have no effect until they are loaded.
-- **English is the only complete translation.** No other language has the `landing` keys (the start page), so the start page always shows English.
-- Six loaded languages have no **lead-in sentences** for the result card ("I have the following food allergies:"). Their card shows the group's title instead, for example "食物アレルギー".
-- On 19 October 2026 the ten files in the older key layout were brought up to date, and wrong "vegan" and "vegetarian" terms were fixed in five of them (see [Fixed errors](#fixed-errors)). The new text in those files was written without a native speaker and needs review.
+- **Five translations are complete:** English, German, Spanish, French and Italian. Every other language is missing only the `landing` keys (the start page), which then shows in English.
+- Every language has the **lead-in sentences** for the result card ("I have the following food allergies:").
 
 ## Status by language
 
 | Language | Code | Live | Notes | Confidence | Verified by human |
 | --- | --- | --- | --- | --- | --- |
 | English | `en` | Yes | Complete | n/a | n/a (source text) |
-| Spanish | `es` | Yes | Missing start page | High | No |
-| French | `fr` | Yes | Missing start page | High | No |
+| Spanish | `es` | Yes | Complete | High | No |
+| French | `fr` | Yes | Complete | High | No |
 | Portuguese | `pt` | Yes | Missing start page | High | No |
-| German | `de` | Yes | Missing start page and card lead-ins | High | No |
-| Italian | `it` | Yes | Missing start page and card lead-ins | High | No |
-| Russian | `ru` | No | Missing start page and card lead-ins | Medium | No |
-| Chinese (simplified) | `zh` | No | Missing start page and card lead-ins | Medium | No |
-| Japanese | `ja` | No | Missing start page and card lead-ins | Medium | No |
-| Korean | `ko` | No | Missing start page and card lead-ins | Medium | No |
+| German | `de` | Yes | Complete | High | No |
+| Italian | `it` | Yes | Complete | High | No |
+| Russian | `ru` | No | Missing start page | Medium | No |
+| Chinese (simplified) | `zh` | No | Missing start page | Medium | No |
+| Japanese | `ja` | No | Missing start page | Medium | No |
+| Korean | `ko` | No | Missing start page | Medium | No |
 | Czech | `cs` | No | Ready apart from start page | Medium | No |
 | Danish | `da` | No | Ready apart from start page | High | No |
 | Dutch | `nl` | No | Ready apart from start page | High | No |
@@ -59,7 +58,7 @@ Each language is one JSON file in [`src/i18n/translations/`](src/i18n/translatio
 - **Medium:** mostly right, but some terms are unusual or awkward. For example, Japanese uses 完全菜食 for "vegan" where ヴィーガン is more common, and Czech uses adjective forms ("Veganské") that read oddly on their own.
 - **Low:** the file had a safety error (see [Fixed errors](#fixed-errors)), and its newer text was written without a native speaker.
 
-**Verified by human** is "Yes" only once a native speaker has checked the whole file. No file has been checked yet. When one is, change its row and note who checked it and when.
+**Verified by human** is "Yes" only once a native speaker has checked the whole file. No file has been checked yet. When one is, change its to note when it was checked.
 
 ## Adding a language to the app
 

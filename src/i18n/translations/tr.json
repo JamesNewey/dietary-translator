@@ -31,7 +31,8 @@
       "header": "Aşağıdaki gıda alerjilerine sahibim:",
       "items": {
         "nuts": "Kuruyemişler",
-        "shellfish": "Kabuklu Deniz Ürünleri",
+        "crustaceans": "Kabuklular",
+        "molluscs": "Yumuşakçalar",
         "eggs": "Yumurta",
         "dairy": "Süt Ürünleri",
         "soy": "Soya",

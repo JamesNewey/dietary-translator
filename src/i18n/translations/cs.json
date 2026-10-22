@@ -31,7 +31,8 @@
       "header": "Mám následující potravinové alergie:",
       "items": {
         "nuts": "Ořechy",
-        "shellfish": "Korýši",
+        "crustaceans": "Korýši",
+        "molluscs": "Měkkýši",
         "eggs": "Vejce",
         "dairy": "Mléčné Výrobky",
         "soy": "Sója",

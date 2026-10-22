@@ -31,7 +31,8 @@
       "header": "Jeg har følgende matallergier:",
       "items": {
         "nuts": "Nøtter",
-        "shellfish": "Skalldyr",
+        "crustaceans": "Skalldyr",
+        "molluscs": "Bløtdyr",
         "eggs": "Egg",
         "dairy": "Meieriprodukter",
         "soy": "Soya",
